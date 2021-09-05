@@ -1,9 +1,0 @@
-{
-  "usingComponents": {
-    "AddressPicker":"../../../components/business/AddressPicker/AddressPicker"
-  },
-  "navigationBarTitleText": "下单填写",
-  "navigationBarBackgroundColor":"#fff",
-  "navigationBarTextStyle": "black",
-  "enablePullDownRefresh": true
-}

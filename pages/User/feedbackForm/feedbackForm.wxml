@@ -1,8 +1,0 @@
-<view class='container'>
-  <input class="contact-input" type="number" placeholder="请留下您的联系方式" bindinput="onContactInput" />
-  <textarea class="content-wrap" placeholder='*欢迎在此留下宝贵的建议' bindinput='contentInputHandle'></textarea>
-  <oButton bindtap='submit'>提交</oButton>
-</view>
-
-<van-toast id="van-toast" />
-<van-dialog id="van-dialog" />
