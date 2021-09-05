@@ -1,0 +1,2 @@
+<i class="iconfont icon-{{name}}` custom-icon"
+  style="color:{{color}};font-size:{{size}}rpx;font-weight:{{ bold ? 'bolder':'normal'}}"></i>

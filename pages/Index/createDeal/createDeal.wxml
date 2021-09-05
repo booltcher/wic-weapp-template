@@ -1,0 +1,89 @@
+<view class="container">
+    <!-- address -->
+    <view class="form-addr form-card">
+        <oIcon name="png" color="#fe75a9" size="30" bold="true"></oIcon>
+        <view class="address-main">
+            <view class="address-instance" wx:if="{{ formData.activeAddress }}" bindtap="showAddressPicker">
+                <view>{{ formData.activeAddress.name }} {{ formData.activeAddress.mobile }}</view>
+                <view>{{ formData.activeAddress.addressName }} {{ formData.activeAddress.details }}</view>
+            </view>
+            <view class="address-tip" bindtap="navAddressInfo" wx:else>暂无默认地址，点击前往添加</view>
+        </view>
+        <oIcon name="tongxunlu1" color="" size="40" bindtap="showAddressPicker"></oIcon>
+    </view>
+
+    <!-- goods -->
+    <view class="form-goods form-card">
+        <view class="card-title card-title--goods">
+            <view class="card-title-inner">回收物品</view>
+            <view class="title-btn--clear" bindtap="clearGoods" wx:if="{{ formData.items.length }}">
+                <oIcon name="shanchu" size="26" color="#999"></oIcon>
+                <view style="margin-left:10rpx">清除</view>
+            </view>
+        </view>
+        <view class="goods-card-main">
+            <view class="goods-tip" wx:if="{{ !formData.items.length }}">暂无选中物品，请点击按钮添加</view>
+            <view class="goods-item" wx:for="{{ formData.items }}" wx:for-index="index">
+                <image src="{{ item.productCover }}" class="goods-cover" mode="aspectFill"></image>
+                <view class="goods-info">
+                    <view class="goods-left">
+                        <view class="goods-name">{{ item.productName }}</view>
+                        <view class="goods-config">{{ item.optionName }}</view>
+                    </view>
+                    <view class="goods-right">
+                        <view class="goods-price">￥{{ item.minPrice }} - ￥{{ item.maxPrice }}</view>
+                        <oIcon name="minus-circle" color="#999" bindtap="removeGood" data-id="{{ item.productId }}"></oIcon>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="goods-footer" bindtap="navCategory">
+            <view class="goods-add-btn">添加</view>
+        </view>
+    </view>
+
+    <!-- date -->
+    <view class="form-date form-card">
+        <view class="card-title">预约日期</view>
+        <view class="date-card-main">
+            <view class="date-item {{ activeDateIndex === index ? 'active':'' }}" wx:for="{{ dateList }}"
+                wx:for-index="index" data-index="{{ index }}" bindtap="chooseDate">{{ item.text }}</view>
+        </view>
+    </view>
+
+    <!-- time -->
+    <view class="form-time form-card">
+        <view class="card-title">预约时间</view>
+        <view class="time-card-main">
+            <view class="time-item {{ activeTimeIndex === index ? 'active':'' }}"
+                wx:for="{{ dateList[activeDateIndex].times }}" wx:for-index="index" data-index="{{ index }}"
+                bindtap="chooseTime">{{ item }}</view>
+        </view>
+    </view>
+
+    <!-- other -->
+    <view class="form-other form-card">
+        <view class="card-title">备注</view>
+        <input type="text" class="other-input" bindinput="handleInput" placeholder="可描述物品状态和特殊要求"
+            placeholder-class="plc" />
+    </view>
+
+    <!-- fixed -->
+    <view class="fixed-plc"></view>
+    <view class="fixed-bar">
+        <oIcon name="01_huishouzhan" color="#fe75a9" size="60"></oIcon>
+        <view class="footer-main">
+            <view class="footer-inner">
+                <text>预估 </text>
+                <text style="color:#F56C6C;font-weight:bolder">￥{{ formData.preMinAmount }} ~  ￥{{ formData.preMaxAmount }}</text>
+            </view>
+            <view style="font-size:24rpx">成交价格以实际评估为准</view>
+        </view>
+        <view class="submit-btn" bindtap="submit">去下单</view>
+    </view>
+</view>
+
+<AddressPicker visible="{{ addressPickerVisible }}" bind:update="handleAddressPickerUpdate"
+    bind:close="hideAddressPicker" bind:change="handleAddressPickerChange">
+</AddressPicker>
+<van-toast id="van-toast" />

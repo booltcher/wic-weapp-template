@@ -1,0 +1,32 @@
+<view class="container">
+    <view class="name-wrap">{{ info.name }}</view>
+    <view class="type-wrap">
+        <view class="type-wrap-inner" wx:if="{{ info.type === 0 }}">
+            <image src="../../../static/images/icon-search-recycle.png"></image>
+            <view class="type-name">可回收垃圾</view>
+        </view>
+        <view class="type-wrap-inner" wx:if="{{ info.type === 1 }}">
+            <image src="../../../static/images/icon-search-dangrous.png"></image>
+            <view class="type-name">有害垃圾</view>
+        </view>
+        <view class="type-wrap-inner" wx:if="{{ info.type === 2 }}">
+            <image src="../../../static/images/icon-search-water.png"></image>
+            <view class="type-name">厨余垃圾</view>
+        </view>
+        <view class="type-wrap-inner" wx:if="{{ info.type === 3 }}">
+            <image src="../../../static/images/icon-search-dray.png"></image>
+            <view class="type-name">干垃圾</view>
+        </view>
+        <view class="type-explain" wx:if="{{ info.explain }}">{{ info.explain }}</view>
+    </view>
+
+    <view class="contain-wrap" wx:if="{{ info.contain }}">
+        <view class="title">包含类型</view>
+        <view class="contain-main">{{ info.contain }}</view>
+    </view>
+
+    <view class="tip-wrap">
+        <view class="title">回收指导</view>
+        <view class="tip-main">{{ info.tip }}</view>
+    </view>
+</view>

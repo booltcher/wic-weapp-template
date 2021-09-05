@@ -1,0 +1,7 @@
+{
+  "navigationStyle":"custom",
+  "usingComponents": {
+    "oHeader": "../../../components/base/oHeader/oHeader",
+    "BadgeCard": "../../../components/business/BadgeCard/BadgeCard"
+  }
+}

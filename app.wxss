@@ -1,0 +1,2 @@
+@import './styles/reset.wxss';
+@import './styles/global.wxss';

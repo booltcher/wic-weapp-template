@@ -1,0 +1,56 @@
+<view class="container">
+      <!-- Info -->
+      <view class="user-info-wrap">
+            <view class="user-info-inner">
+                  <image class="user-info-avatar" src="{{ userInfo.avatarUrl }}"></image>
+                  <view class="user-info-name" wx:if="{{ userInfo.nickname === '微信用户' }}" bindtap="getRealUserInfo">
+                        点击获取昵称头像</view>
+                  <view class="user-info-name" wx:else>{{ userInfo.nickname }}</view>
+                  <button class="bind-mobile-btn" wx:if="{{ !userInfo.mobile }}" open-type="getPhoneNumber"
+                bindgetphonenumber="getPhoneNumber">绑定手机号</button>
+            </view>
+
+            <view class="user-capital">
+                  <view class="user-capital-item">
+                        <view class="user-capital-value">{{ userInfo.coin }}</view>
+                        <view class="user-capital-name">环保币</view>
+                  </view>
+                  <view class="user-capital-item">
+                        <view class="user-capital-value">{{ userInfo.totalCount }}</view>
+                        <view class="user-capital-name">回收次数</view>
+                  </view>
+                  <view class="user-capital-item">
+                        <view class="user-capital-value">{{ userInfo.totalAmount }}</view>
+                        <view class="user-capital-name">回收金额</view>
+                  </view>
+            </view>
+      </view>
+
+      <!-- Order -->
+      <view class="order-entry-wrap">
+            <view class="order-entry-item" wx:for="{{ orderStatusList }}" data-key="{{ item.key }}" bindtap="navOrderList">
+                  <image class="order-entry-item__icon" src="{{ item.icon }}"></image>
+                  <text class="order-entry-item__title">{{ item.title }}</text>
+            </view>
+      </view>
+
+      <!-- Tools -->
+      <image class="module-title" src="../../../static/images/bg-user-solgen.jpg" mode="widthFix"></image>
+      <view class="tool-wrap">
+            <view class="tool-item" wx:for="{{toolList}}" bindtap="toolsHandle" data-item="{{item}}">
+                  <image class="tool-item-icon" src="{{item.icon}}"></image>
+                  <text class="tool-item-title">{{item.title}}</text>
+            </view>
+            <button class="open-btn" open-type="contact" bindcontact="contact">
+                  <image class="tool-item-icon" src="../../../static/images/icon-tools-service.jpg"></image>
+                  <text class="tool-item-title">在线客服</text>
+            </button>
+            <button class="open-btn" open-type="share" bindcontact="share">
+                  <image class="tool-item-icon" src="../../../static/images/icon-tools-share.jpg"></image>
+                  <text class="tool-item-title">分享好友</text>
+            </button>
+      </view>
+</view>
+
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />

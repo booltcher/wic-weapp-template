@@ -1,0 +1,36 @@
+.container {
+  position: fixed;
+  height: 100vh;
+}
+
+.contact-input {
+  background-color: #fff;
+  width: 90%;
+  margin: 40rpx auto;
+  height: 80rpx;
+  border: 1px solid var(--color_border);
+  border-radius: 10rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.content-wrap {
+  background-color: #fff;
+  width: 90%;
+  margin: 40rpx auto;
+  height: 300rpx;
+  border: 1px solid var(--color_border);
+  border-radius: 10rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  background-color: var(--color_header);
+  opacity: 1;
+  width: 90%;
+}
+
+.btn_hover {
+  opacity: 0.9
+}

@@ -1,0 +1,10 @@
+<view class="custom-system-header" style="height:{{customheaderHeight}}px;padding-top:{{paddingTop}}px">
+    <view class="custom-header-inner" style="height:{{innerHeight}}px">
+        <view class="custom-header-before">
+            <slot name="before"></slot>
+        </view>
+        <view class="custom-header-title">
+            <slot name="title"></slot>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,129 @@
+.container{
+     font-size: 24rpx;
+}
+.user-info-wrap{
+     width: 100%;
+     /* background-color: var(--color_header); */
+     background-color: #fff;
+     padding-bottom: 140rpx;
+}
+.user-info-inner{
+     display: flex;
+     align-items: center;
+     padding: 0 40rpx;
+     box-sizing: border-box;
+}
+.user-info-avatar{
+     width: 100rpx;
+     height: 100rpx;
+     border-radius: 100%;
+     margin-right: 20rpx;
+}
+.user-info-name{
+     /* color: #fff; */
+     font-size: 26rpx;
+}
+.bind-mobile-btn{
+     color: #999;
+     font-size: 26rpx;
+     display: flex;
+     background: transparent;
+     margin: 0;
+}
+.user-capital{
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     margin-top: 40rpx;
+}
+.user-capital-item{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     /* color: #fff; */
+}
+.user-capital-value{
+     font-size: 28rpx;
+     font-weight: bolder;
+}
+.user-capital-name{
+     margin-top: 10rpx;
+}
+
+.order-entry-wrap{
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     background-color: #fff;
+     border-radius: 10rpx;
+     width: 710rpx;
+     margin: 20rpx auto;
+     padding: 30rpx 10rpx;
+     box-sizing: border-box;
+     box-shadow: 0px 0px 5px 0px #E5E5E5;
+     margin-top: -100rpx;
+}
+.order-entry-item{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+}
+.order-entry-item__icon{
+     width: 48rpx;
+     height: 48rpx;
+}
+.order-entry-item__title{
+     margin-top: 20rpx; 
+}
+.module-title{
+     display: flex;
+     margin: 20rpx auto;
+     width: 710rpx;
+     border-radius: 10rpx;
+}
+.tool-wrap{
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     background-color: #fff;
+     border-radius: 10rpx;
+     width: 690rpx;
+     margin: 20rpx auto;
+     padding: 30rpx 10rpx;
+     box-sizing: border-box;
+     box-shadow: 0px 0px 5px 0px #E5E5E5;
+     grid-row-gap: 40rpx;
+}
+.tool-item{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+}
+.tool-item-icon{
+     width: 48rpx;
+     height: 48rpx;
+     margin-bottom: 20rpx;
+}
+.open-btn{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     height: 100rpx;
+     padding: 0;
+     outline: none;
+     border: none;
+     margin: 0;
+     line-height: 1;
+     background-color: #fff;
+     box-shadow: none;
+}
+.open-btn:after{
+     border: none;
+}
+.open-btn .tool-item-icon{
+     flex-shrink: 0;
+}
+.open-btn .tool-item-title{
+     font-size: 24rpx;
+}

@@ -1,0 +1,7 @@
+<view class="o-button__wrap">
+      <van-button disabled="{{ disabled || loading }}" loading="{{ loading }}" loading-type="circular"
+            color="{{ color }}" round="{{ round }}" plain="{{ plain }}" block="{{ block }}" icon="{{ icon }}"
+            class="o-button__main {{ block ? 'o-button__main--block':'o-button__main--inline'}}">
+            <slot></slot>
+      </van-button>
+</view>

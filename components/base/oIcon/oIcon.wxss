@@ -1,0 +1,5 @@
+@import './icon.wxss';
+.custom-icon{
+  /* display: flex; */
+  flex-shrink: 0;
+}

@@ -1,0 +1,19 @@
+@import "../../../styles//quill.wxss";
+
+.container {
+    padding: 30rpx 34rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+rich-text>img {
+    max-width: 340px;
+}
+
+rich-text img {
+    max-width: 340px;
+}
+
+.container img {
+    max-width: 340px;
+}

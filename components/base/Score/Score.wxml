@@ -1,0 +1,19 @@
+<view class="score-wrap">
+    <view class="score-main" wx:if="{{ mode === 'display' }}">
+        <oIcon style="margin-right:4rpx" wx:for="{{ fullCount }}" name="star-full" size="{{ size }}" color="{{ color }}"></oIcon>
+        <!-- <oIcon style="margin-right:4rpx" wx:if="{{ showHalf }}" name="star-half" size="{{ size }}" color="{{ color }}"></oIcon> -->
+        <oIcon style="margin-right:4rpx" wx:for="{{ (showHalf ? 4 : 5 ) - fullCount}}" name="star" size="{{ size }}"
+            color="#999"></oIcon>
+    </view>
+    <view class="score-main" wx:if="{{ mode === 'evaluate' }}">
+        <view class="score-main">
+            <oIcon style="margin-right:4rpx" wx:for="{{ scoreValue }}" name="star-full" size="{{ size }}"
+                color="{{ color }}" data-index="{{index}}" bindtap="clickFill"></oIcon>
+            <!-- <oIcon style="margin-right:4rpx" wx:if="{{ showHalf }}" name="star-half" size="{{ size }}" color="{{ color }}"></oIcon> -->
+            <oIcon style="margin-right:4rpx" wx:for="{{ (showHalf ? 4 : 5 ) - scoreValue}}" name="star" size="{{ size }}"
+                color="#999" bindtap="clickHollow" data-index="{{index}}"></oIcon>
+        </view>
+    </view>
+    <view wx:if="{{ showNumber }}" class="number-wrap"
+        style="font-size:{{ size - 4 }}rpx;background:{{ color }};color:{{ numberColor }}">{{ showValue }}</view>
+</view>

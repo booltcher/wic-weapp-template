@@ -1,0 +1,16 @@
+.score-wrap{
+    display: flex;
+    flex-direction: row;
+}
+.score-main{
+    margin-right: 20rpx;
+    display: flex;
+}
+
+.number-wrap{
+    padding: 0 10rpx;
+    border-radius: 4rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

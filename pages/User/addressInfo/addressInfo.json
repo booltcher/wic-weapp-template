@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-switch": "@vant/weapp/switch/index"
+  },
+  "navigationBarBackgroundColor":"#ffffff",
+  "navigationBarTitleText":"地址详情",
+  "navigationBarTextStyle":"black"
+}
