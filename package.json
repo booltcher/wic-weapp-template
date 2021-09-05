@@ -1,7 +1,7 @@
 {
   "name": "wic-applet-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "a template for fast generating applet project",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
