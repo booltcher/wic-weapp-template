@@ -1,0 +1,16 @@
+{
+  "name": "wic-applet-template",
+  "version": "1.0.0",
+  "description": "a template for fast generating applet project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.6.4",
+    "miniprogram-api-promise": "^1.0.4"
+  }
+}
