@@ -1,4 +1,0 @@
-<view class="empty-wrap" wx:if="{{ visible }}">
-    <image class="empty-icon" src="{{ icon }}" mode="widthFix"></image>
-    <view class="empty-tip">暂无{{ tip }}</view>
-</view>

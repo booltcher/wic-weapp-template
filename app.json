@@ -1,119 +1,24 @@
 {
     "pages": [
-        "pages/Index/index/index",
-
-        "pages/Teach/teach/teach",
-
-        "pages/News/news/news",
-        "pages/News/newsInfo/newsInfo",
-
-        "pages/User/aboutUs/aboutUs",
-
-        "pages/User/user/user",
-
-        "pages/User/orderList/orderList",
-
-        "pages/User/orderInfo/orderInfo",
-
-        "pages/User/evaluateForm/evaluateForm",
-
-        "pages/Form/formNow/formNow",
-
-        "pages/Index/search/search",
-
-        "pages/Index/searchResult/searchResult",
-
-        "pages/User/feedbackForm/feedbackForm",
-
-        "pages/User/feedbackRecord/feedbackRecord",
-
-        "pages/User/feedbackInfo/feedbackInfo",
-
-        "pages/Index/createDeal/createDeal",
-
-        "pages/Form/category/category",
-
-        "pages/User/addressList/addressList",
-
-        "pages/User/siteList/siteList",
-
-        "pages/User/addressInfo/addressInfo",
-
-        "pages/System/authorize/authorize"
+        "pages/Index/index",
+        "pages/User/user",
+        "pages/Authorize/authorize"
     ],
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fe75a9",
-        "navigationBarTitleText": "小猪回收",
+        "navigationBarBackgroundColor": "#313131",
+        "navigationBarTitleText": "winter is coming",
         "navigationBarTextStyle": "white"
     },
     "sitemapLocation": "sitemap.json",
     "usingComponents": {
-        "van-popup": "@vant/weapp/popup/index",
-        "van-field": "@vant/weapp/field/index",
-        "van-button": "@vant/weapp/button/index",
-        "van-icon": "@vant/weapp/icon/index",
-        "van-row": "@vant/weapp/row/index",
-        "van-col": "@vant/weapp/col/index",
         "van-toast": "@vant/weapp/toast/index",
-        "van-dialog": "@vant/weapp/dialog/index",
-        "van-cell": "@vant/weapp/cell/index",
-        "van-cell-group": "@vant/weapp/cell-group/index",
-        "van-empty": "@vant/weapp/empty/index",
-        "van-skeleton": "@vant/weapp/skeleton/index",
-        "van-tag": "@vant/weapp/tag/index",
-        "van-tab": "@vant/weapp/tab/index",
-        "van-tabs": "@vant/weapp/tabs/index",
-        "van-action-sheet": "@vant/weapp/action-sheet/index",
         "van-divider": "@vant/weapp/divider/index",
-        "van-grid": "@vant/weapp/grid/index",
-        "van-grid-item": "@vant/weapp/grid-item/index",
-        "oIcon": "/components/base/oIcon/oIcon",
-        "oList": "/components/base/oList/oList",
-        "oButton": "/components/base/oButton/oButton",
-        "oEmpty": "/components/base/oEmpty/oEmpty",
-        "Score": "/components/base/Score/Score"
+        "oIcon": "/components/base/oIcon/oIcon"
     },
     "permission": {
         "scope.userLocation": {
             "desc": "你的位置信息将用于小程序位置接口的效果展示"
         }
-    },
-    "tabBar": {
-        "color": "#aaaaaa",
-        "selectedColor": "#626262",
-        "borderStyle": "white",
-        "list": [
-            {
-                "iconPath": "static/images/icon-tab-index.jpg",
-                "selectedIconPath": "static/images/icon-tab-index-active.jpg",
-                "pagePath": "pages/Index/index/index",
-                "text": "首页"
-            },
-            {
-                "iconPath": "static/images/icon-tab-teach.jpg",
-                "selectedIconPath": "static/images/icon-tab-teach-active.jpg",
-                "pagePath": "pages/Teach/teach/teach",
-                "text": "科普"
-            },
-            {
-                "iconPath": "static/images/icon-tab-form.jpg",
-                "selectedIconPath": "static/images/icon-tab-form-active.jpg",
-                "pagePath": "pages/Form/formNow/formNow",
-                "text": "一键回收"
-            },
-            {
-                "iconPath": "static/images/icon-tab-news.jpg",
-                "selectedIconPath": "static/images/icon-tab-news-active.jpg",
-                "pagePath": "pages/News/news/news",
-                "text": "资讯"
-            },
-            {
-                "iconPath": "static/images/icon-tab-user.jpg",
-                "selectedIconPath": "static/images/icon-tab-user-active.jpg",
-                "pagePath": "pages/User/user/user",
-                "text": "我的"
-            }
-        ]
     }
 }
