@@ -1,140 +1,127 @@
-import Toast from '../miniprogram_npm/@vant/weapp/toast/toast';
-import {
-  LoadingToast,
-  ErrorToast,
-  oToast,
-  Dialog
-} from '../utils/toast';
-import ErrorCodeMap from "./ErrorCodeMap";
-import Login from "./login"
+import Prompt from "../utils/Prompt";
+import Login from "./login";
 
-const app = getApp()
+const App = getApp();
 
-const reloginList = ['U_006', 'U_007', 'U_008']
+const FailureLoginList = ["U_006", "U_007", "U_008"];
 
-function Network(args) {
-  if (args.loadingVisible) {
-    LoadingToast();
+/**
+ * useLoading: show loading?
+ * useError: use error msg from server?
+ */
+
+class Network {
+  constructor(url, method, header, data, useLoading, useError) {
+    this.url = App.globalData.REQUEST_BASE_URL + url;
+    this.methos = method;
+    this.header = header;
+    this.data = data;
+    this.useLoading = useLoading;
+    this.useError = useError;
+    this.isLoginReq = data && data.isloginReq;
+    this.timeout = App.globalData.REQUEST_TIMEOUT;
   }
-  let {
-    url,
-    method,
-    data,
-    header
-  } = args
-  return new Promise((resolve, reject) => {
-    const _tmp = {
-      url: app.globalData.BASE_URL + url,
-      method,
-      timeout: 8000,
-      header: {
-        ...header,
-        Authorization: app.globalData.token
-      },
-      data,
-      success: (res) => {
-        if (res.data.code === '200') {
-          //防止清楚其他请求的loading
-          if (args.loadingVisible || data.loginRequest) {
-            Toast.clear()
-          }
-        } else {
-          if (args.data && !args.data.hideError) {
-            Toast.clear()
-            //reloginList.includes(res.data.code) ? Login() : Error(ErrorCodeMap[res.data.code])
-            if (reloginList.includes(res.data.code)) {
-              Login()
-              wx.switchTab({
-                url: '/pages/Index/index/index',
-              })
-            } else {
-              oToast(res.data.msg)
-            }
-            //reloginList.includes(res.data.code) ? Login() : oToast(res.data.msg)
-          } else if (args.data && args.data.hideError) {  //隐藏错误信息
-            Toast.clear()
+
+  send() {
+    console.log(this)
+    if (this.useLoading) {
+      Prompt.loading();
+    }
+
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: this.url,
+        data: this.data,
+        method: this.method,
+        header: {},
+        success: (res) => {
+          if (res.data.code === "200") {
+            this.successHandler(res, resolve);
           } else {
-            Toast.clear()
-            reloginList.includes(res.data.code) ? Login() : oToast(res.data.msg)
+            this.errorHandler(res, reject);
           }
-        }
-        if (res.header.Authorization) {
-          getApp().globalData.token = res.header.Authorization
-        }
-        if (data && data.loginRequest) {
-          resolve(res)
-        } else {
-          resolve(res.data)
-        }
-      },
-      fail: (err) => {
-        Dialog({
-          message: '请求超时，请检查网络后重试',
-          showCancel: false,
-          title: ''
-        })
-          .then(() => {
-            let pages = getCurrentPages() //获取加载的页面
-            let currentPage = pages[pages.length - 1] //获取当前页面的对象
-            let url = currentPage.route //当前页面url
-            Login()
-            if (url !== 'pages/Index/index/index') {
-              wx.switchTab({
-                url: '/pages/Index/index/index',
-              })
-            }
+        },
+        fail: (err) => {
+          this.errorHandler(err, reject);
+        },
+      });
+    });
+  }
+
+  successHandler(res, callback) {
+    this.setToken(res);
+    this.isloginReq ? callback(res) : callback(res.data);
+  }
+
+  errorHandler(res, callback) {
+    // network error
+    if (res.statusCode !== 200) {
+      Prompt.dialog({
+        message: "请求超时，请检查网络后重试",
+        showCancel: false,
+        title: "",
+      }).then(() => {
+        let pages = getCurrentPages();
+        let currentPage = pages[pages.length - 1];
+        let url = currentPage.route;
+        Login();
+        if (url !== "pages/Index/index") {
+          wx.switchTab({
+            url: "/pages/Index/index",
           });
-        reject()
-      },
+        }
+      });
+      return
     }
-    // _tmp.data.app_token = getApp().globalData.app_token;
-    if (!_tmp.header['content-type']) {
-      _tmp.header['content-type'] = (method.toLowerCase() === 'post' || method.toLowerCase() === 'put') ? 'application/x-www-form-urlencoded' : 'application/json'
+
+    // tolen expired
+    if (FailureLoginList.includes(res.data.code)) {
+      this.reconnect();
+      return;
     }
-    wx.request(_tmp)
-  })
+
+    // other error
+    if (this.data && this.data.useError) {
+      Prompt.clear();
+      Prompt.error(res.data.msg);
+      return;
+    }
+
+    callback();
+  }
+
+  setToken(res) {
+    if (res.header.Authorization) {
+      getApp().globalData.token = res.header.Authorization;
+    }
+  }
+
+  reconnect() {
+    Login();
+    // wx.switchTab({
+    //   url: "/pages/Index/index/index",
+    // });
+  }
 }
 
-export function _GET_(url, params, loadingVisible = true) {
-  return Network({
-    url: url,
-    method: 'GET',
-    data: params,
-    loadingVisible
-  })
-}
-export function _POST_(url, params, loadingVisible = true) {
-  return Network({
-    url: url,
-    method: 'POST',
-    data: params,
-    loadingVisible
-  })
-}
-export function _PUTJSON_(url, params, loadingVisible = true) {
-  return Network({
-    url: url,
-    method: 'PUT',
-    data: params,
-    header: {
-      'content-type': 'application/json'
-    },
-    loadingVisible
-  })
-}
-export function _PUT_(url, params, loadingVisible = true) {
-  return Network({
-    url: url,
-    method: 'PUT',
-    data: params,
-    loadingVisible
-  })
-}
-export function _DELETE_(url, params, loadingVisible = true) {
-  return Network({
-    url: url,
-    method: 'DELETE',
-    data: params,
-    loadingVisible
-  })
-}
+export const HttpGet = (url, data, useLoading = true, useError = true) =>
+  new Network(url, "GET", null, data, useLoading, useError).send();
+
+export const HttpPost = (url, data, useLoading = true, useError = true) =>
+  new Network(url, "POST", null, data, useLoading, useError).send();
+
+export const HttpPut = (url, data, useLoading = true, useError = true) =>
+  new Network(url, "PUT", null, data, useLoading, useError).send();
+
+export const HttpDelete = (url, data, useLoading = true, useError = true) =>
+  new Network(url, "DELETE", null, data, useLoading, useError).send();
+
+export const HttpPostJson = (url, data, useLoading = true, useError = true) =>
+  new Network(
+    url,
+    "POST",
+    { "content-type": "application/json" },
+    data,
+    useLoading,
+    useError
+  ).send();

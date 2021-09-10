@@ -4,7 +4,7 @@ import {
   ErrorToast,
   oToast,
   Dialog
-} from "../../utils/toast.js";
+} from "../../utils/Prompt.js";
 import Login from "../../services/login";
 const app = getApp()
 
