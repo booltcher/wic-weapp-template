@@ -1,11 +1,11 @@
-import services from "../../../services/api.js"
+import services from "../../services/api.js"
 import {
   SuccessToast,
   ErrorToast,
   oToast,
   Dialog
-} from "../../../utils/toast.js";
-import Login from "../../../services/login"
+} from "../../utils/toast.js";
+import Login from "../../services/login"
 const app = getApp()
 Page({
   data: {

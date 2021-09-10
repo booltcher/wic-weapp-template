@@ -2,6 +2,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 var utils_1 = require('../common/utils');
 var component_1 = require('../common/component');
+var validator_1 = require('../common/validator');
 var page_scroll_1 = require('../mixins/page-scroll');
 var ROOT_ELEMENT = '.van-sticky';
 component_1.VantComponent({
@@ -49,11 +50,12 @@ component_1.VantComponent({
   methods: {
     onScroll: function (_a) {
       var _this = this;
-      var scrollTop = (_a === void 0 ? {} : _a).scrollTop;
-      var _b = this.data,
-        container = _b.container,
-        offsetTop = _b.offsetTop,
-        disabled = _b.disabled;
+      var _b = _a === void 0 ? {} : _a,
+        scrollTop = _b.scrollTop;
+      var _c = this.data,
+        container = _c.container,
+        offsetTop = _c.offsetTop,
+        disabled = _c.disabled;
       if (disabled) {
         this.setDataAfterDiff({
           fixed: false,
@@ -87,6 +89,9 @@ component_1.VantComponent({
         return;
       }
       utils_1.getRect(this, ROOT_ELEMENT).then(function (root) {
+        if (!validator_1.isDef(root)) {
+          return;
+        }
         if (offsetTop >= root.top) {
           _this.setDataAfterDiff({ fixed: true, height: root.height });
           _this.transform = 0;
@@ -104,7 +109,9 @@ component_1.VantComponent({
           }
           return prev;
         }, {});
-        _this.setData(diff);
+        if (Object.keys(diff).length > 0) {
+          _this.setData(diff);
+        }
         _this.$emit('scroll', {
           scrollTop: _this.scrollTop,
           isFixed: data.fixed || _this.data.fixed,

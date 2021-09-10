@@ -2,11 +2,10 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 var component_1 = require('../common/component');
 var button_1 = require('../mixins/button');
-var open_type_1 = require('../mixins/open-type');
 var color_1 = require('../common/color');
 var utils_1 = require('../common/utils');
 component_1.VantComponent({
-  mixins: [button_1.button, open_type_1.openType],
+  mixins: [button_1.button],
   props: {
     show: {
       type: Boolean,
@@ -70,6 +69,7 @@ component_1.VantComponent({
       confirm: false,
       cancel: false,
     },
+    callback: function () {},
   },
   methods: {
     onConfirm: function () {
@@ -79,7 +79,7 @@ component_1.VantComponent({
       this.handleAction('cancel');
     },
     onClickOverlay: function () {
-      this.onClose('overlay');
+      this.close('overlay');
     },
     close: function (action) {
       var _this = this;

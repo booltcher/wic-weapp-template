@@ -1,13 +1,13 @@
 {
     "pages": [
-        "pages/Index/index",
         "pages/User/user",
+        "pages/Index/index",
         "pages/Authorize/authorize"
     ],
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#313131",
-        "navigationBarTitleText": "winter is coming",
+        "navigationBarTitleText": "Winter is coming",
         "navigationBarTextStyle": "white"
     },
     "sitemapLocation": "sitemap.json",

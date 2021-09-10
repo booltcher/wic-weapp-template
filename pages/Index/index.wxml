@@ -1,13 +1,4 @@
-<view class="container" style="padding-top:{{paddingTop}}px">
-    <!-- oHeader -->
-    <oHeader bind:rendered="headerRenderedHandle">
-        <button slot="before" class="open-btn" open-type="contact" bindcontact="contact">
-            <oIcon name="kefu" color="#fff"></oIcon>
-        </button>
-        <!-- <oIcon slot="before" name="kefu" color="#fff"></oIcon> -->
-        <view slot="title">小猪上门回收</view>
-    </oHeader>
-
+<view class="container">
     <!-- Search -->
     <view class="search-bar">
         <view class="search-inner" bindtap="navSearch">

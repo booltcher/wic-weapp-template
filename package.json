@@ -1,7 +1,7 @@
 {
-  "name": "wic-applet-template",
+  "name": "wic-weapp-template",
   "version": "1.0.0",
-  "description": "a template for fast generating applet project",
+  "description": "A template project for fast generating applet project(refers to: wic-weapp-cli)",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

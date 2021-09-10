@@ -1,5 +1,5 @@
-import services from "../../../services/api.js"
-import Login from "../../../services/login.js"
+import services from "../../services/api.js"
+import Login from "../../services/login.js"
 const app = getApp()
 Page({
   data: {
