@@ -1,3 +1,4 @@
 page {
-      --color_main: #313131;
+      --color-main: #313131;
+      --color-success: #39b357;
 }

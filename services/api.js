@@ -20,3 +20,8 @@ export const deleteExample = (data, useLoading, useError) =>
 
 export const postJsonExample = (data, useLoading, useError) =>
   HttpPostJson("/client/putjson/test", data, useLoading, useError); // HttpPostJson example
+
+export default {
+  login,
+  getExample,
+};

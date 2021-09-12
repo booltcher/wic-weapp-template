@@ -1,72 +1,23 @@
 <view class="container">
-    <!-- Search -->
-    <view class="search-bar">
-        <view class="search-inner" bindtap="navSearch">
-            <oIcon color="#999" name="sousuo"></oIcon>
-            <view class="search-tip">请输入回收物名称</view>
-            <oIcon color="#999" name="xiangji"></oIcon>
+    <view class="index-title">Wic-weapp-template</view>
+
+    <view class="index-block">
+        <view class="index-block-title">Kits</view>
+        <view class="index-item-wrap grid2">
+            <view class="index-item" wx:for="{{kits}}">{{item}}</view>
         </view>
     </view>
 
-
-    <!-- Swiper -->
-    <view class="big-swiper-wrap">
-        <swiper indicator-dots indicator-color="#ddd" indicator-active-color="" autoplay circular>
-            <swiper-item wx:for="{{ bannerList }}" wx:key="{{ item.id }}">
-                <image src="{{ item.imgUrl }}" mode="aspectFill" data-item="{{ item }}" bindtap="bannerHandle"></image>
-            </swiper-item>
-        </swiper>
+    <view class="index-block">
+        <view class="index-block-title">Modules</view>
+        <view class="index-item-wrap">
+            <view class="index-item" wx:for="{{modules}}">{{item}}</view>
+        </view>
     </view>
 
-
-    <view class="notice-wrap">
-        <view class="notice-icon">New</view>
-        <swiper class="notice-bar" autoplay circular vertical duration="500" interval="2000">
-            <swiper-item class="notice-item" wx:for="{{ noticeList }}" wx:key="{{ item.id }}">
-                <view class="notice-inner">
-                    <view class="limit-text">{{ item.addressName}}</view>
-                    <view>的 {{ item.clientUserNickname }}{{ item.smobile }} 预约回收</view>
-                    <view class="limit-text"> {{ item.goods }} </view>
-                    <view>赚了</view>
-                    <view>{{ item.money }}元</view>
-                </view>
-            </swiper-item>
-        </swiper>
+    <view class="intro-author" >
+       Author @blcher
     </view>
-
-
-    <!-- Process -->
-    <BadgeCard title="回收指南">
-        <view class="process-box">
-            <view class="process-item" wx:for="{{ processList }}">
-                <image src="{{ item.icon }}"></image>
-                <view class="process-text">{{ item.text }}</view>
-                <view class="process-dot" wx:if="{{ index < 3 }}">
-                    <view class="process-dot-inner"></view>
-                    <view class="process-dot-inner"></view>
-                    <view class="process-dot-inner"></view>
-                </view>
-            </view>
-        </view>
-        <view class="precess-btn-wrap">
-            <view class="form-btn" bindtap="navCreateDeal">立即下单</view>
-
-        </view>
-    </BadgeCard>
-
-    <!-- promise -->
-    <BadgeCard title="我们承诺">
-        <view class="promise-box">
-            <view class="promise-item" wx:for="{{ promiseList }}">
-                <view>
-                    <view class="pro-title-main">{{ item.title1 }}</view>
-                    <view class="pro-title-sub">{{ item.title2 }}</view>
-                    <view class="pro-title-sub">{{ item.title3 }}</view>
-                </view>
-                <image src="{{ item.icon }}"></image>
-            </view>
-        </view>
-    </BadgeCard>
 </view>
 
 <van-toast id="van-toast" />

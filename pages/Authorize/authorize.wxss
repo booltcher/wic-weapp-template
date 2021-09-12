@@ -1,4 +1,4 @@
-.container{
+.container {
   min-height: 100vh;
   background-color: #fff;
   display: flex;
@@ -8,29 +8,34 @@
   padding-top: 200rpx;
   overflow: hidden;
   box-sizing: border-box;
+  font-size: 26rpx;
 }
-.iconfont{
+.iconfont {
   font-size: 170rpx;
   font-weight: bolder;
   margin-bottom: 40rpx;
   color: #999;
 }
-.tip{
+.tip {
   width: 680rpx;
   margin: 0 auto;
   text-align: left;
   padding-left: 60rpx;
   box-sizing: border-box;
 }
-.tip--title{
+.tip--title {
   color: #404040;
   margin-bottom: 20rpx;
+  margin-top: 40rpx;
 }
-.tip--item{
+.tip--item {
   color: #999;
 }
-.authorize_btn{
-  background-color: #67C23A;
+.authorize-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #67c23a;
   color: #fff;
   width: 660rpx;
   height: 80rpx;
@@ -43,6 +48,6 @@
   font-size: 26rpx;
 }
 
-.hover_authorize_btn{
-  opacity: 0.9
+.hover-authorize-btn {
+  opacity: 0.9;
 }

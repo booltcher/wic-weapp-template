@@ -1,5 +1,8 @@
 {
-  "navigationStyle":"custom",
-  "usingComponents": {
-  }
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "首页",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false,
+  "usingComponents": {}
 }

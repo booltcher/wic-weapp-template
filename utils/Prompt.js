@@ -68,7 +68,7 @@ export function Dialog(options) {
       title: options.title,
       content: options.message,
       showCancel: options.showCancelButton,
-      confirmColor: "#fe75a9",
+      confirmColor: "#39b357",
       cancelColor: "#999",
       success(res) {
         if (res.confirm) {

@@ -1,6 +1,8 @@
 {
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#fff",
-  "navigationBarTitleText": "授权登录",
-  "navigationBarTextStyle": "black"
+  "navigationBarTitleText": "授权登陆",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false,
+  "usingComponents": {}
 }

@@ -1,19 +1,18 @@
 {
   "pages": [
     "pages/Index/index",
-    "pages/User/user",
-    "pages/Authorize/authorize"
+    "pages/Authorize/authorize",
+    "pages/User/user"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#313131",
-    "navigationBarTitleText": "Winter is coming",
-    "navigationBarTextStyle": "white"
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "Wic",
+    "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
     "van-toast": "@vant/weapp/toast/index",
-    "van-divider": "@vant/weapp/divider/index",
     "oIcon": "/components/base/oIcon/oIcon"
   },
   "permission": {
