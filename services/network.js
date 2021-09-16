@@ -5,11 +5,6 @@ const App = getApp();
 
 const FailureLoginList = ["U_006", "U_007", "U_008"];
 
-/**
- * useLoading: show loading?
- * useError: use error msg from server?
- */
-
 class Network {
   constructor(url, method, header, data, useLoading, useError) {
     this.url = App.globalData.REQUEST_BASE_URL + url;
@@ -23,7 +18,6 @@ class Network {
   }
 
   send() {
-    console.log(this)
     if (this.useLoading) {
       Prompt.loading();
     }

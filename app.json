@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/Index/index",
-    "pages/Authorize/authorize",
-    "pages/User/user"
+    "pages/index/index",
+    "pages/authorize/authorize",
+    "pages/user/user"
   ],
   "window": {
     "backgroundTextStyle": "light",
