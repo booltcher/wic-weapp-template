@@ -1,0 +1,157 @@
+<view class="container">
+    <view class="map-container">
+        <map wx:if="{{ userLocationAuth && mapInitial}}" class="map-instance" name="" latitude="{{ info.latitude }}"
+            longitude="{{ info.longitude }}" markers="{{ mapMarkers }}"></map>
+    </view>
+
+    <view class="map-flow">
+        <view class="order-status-bar order-status-bar--waiting" wx:if="{{ info.orderStatus === 0 }}">
+            <view class="status-text">
+                <view class="status-text-row">订单编号 {{ info.id }}</view>
+                <view class="status-text-row">下单时间 {{ info.createTime }}</view>
+            </view>
+            <view class="status-icon">
+                <text class="status-icon-text">等待接单</text>
+                <oIcon name="round" color="#fff" size="38"></oIcon>
+            </view>
+        </view>
+
+        <view class="order-status-bar order-status-bar--pending" wx:if="{{ info.orderStatus === 1 }}">
+            <view class="status-text">
+                <view class="status-text-row">订单编号 {{ info.id }}</view>
+                <view class="status-text-row">下单时间 {{ info.createTime }}</view>
+            </view>
+            <view class="status-icon">
+                <text class="status-icon-text">已接单</text>
+                <oIcon name="wuliuqiache2" color="#fff" size="38"></oIcon>
+            </view>
+        </view>
+
+        <view class="order-status-bar order-status-bar--pending" wx:if="{{ info.orderStatus === 2 }}">
+            <view class="status-text">
+                <view class="status-text-row">订单编号 {{ info.id }}</view>
+                <view class="status-text-row">下单时间 {{ info.createTime }}</view>
+            </view>
+            <view class="status-icon">
+                <text class="status-icon-text">回收员已出发</text>
+                <oIcon name="check" color="#fff" size="38"></oIcon>
+            </view>
+        </view>
+
+        <view class="order-status-bar order-status-bar--done" wx:if="{{ info.orderStatus === 3 }}">
+            <view class="status-text">
+                <view class="status-text-row">订单编号 {{ info.id }}</view>
+                <view class="status-text-row">完成时间 {{ info.finishTime }}</view>
+            </view>
+            <view class="status-icon">
+                <text class="status-icon-text">已完成</text>
+                <oIcon name="check" color="#fff" size="38"></oIcon>
+            </view>
+        </view>
+
+        <view class="order-status-bar order-status-bar--cancel"
+            wx:if="{{ info.orderStatus === 10 || info.orderStatus === 11 || info.orderStatus === 12 }}">
+            <view class="status-text">
+                <view class="status-text-row">订单编号 {{ info.id }}</view>
+                <view class="status-text-row">取消时间 {{ info.cancelTime }}</view>
+            </view>
+            <view class="status-icon">
+                <text class="status-icon-text">已取消</text>
+                <oIcon name="icon-test10" color="#fff" size="38"></oIcon>
+            </view>
+        </view>
+
+        <!-- <RecyclerCard name="{{ info.recyclerUserName }}" score="{{ info.score }}" mobile="{{ recyclerMobile }}"
+            count="{{ recyclerCount }}" wx:if="{{ info.orderStatus > 0 && !info.cancelTime}}" /> -->
+
+        <view class="order-info {{ boardCollapsed ? 'collapsed' : '' }}">
+            <view class="order-info-collapse-btn" catchtap="collapseInfoBoard">
+                <oIcon name="{{ boardCollapsed ? 'shangjiantou_huaban' : 'xiajiantou'}}" size="24" color="#999"></oIcon>
+            </view>
+
+            <view class="order-info-main">
+                <view class="info-main-row" wx:if="{{info.appointTime}}">
+                    <oIcon wx:if="{{ boardCollapsed }}" name="shijianzhongbiao2" color="#999" size="30"></oIcon>
+                    <text wx:else class="info-main-label">预约时间</text>
+                    <text class="info-main-text">{{ info.appointTime }}</text>
+                </view>
+                <view class="info-main-row">
+                    <oIcon wx:if="{{ boardCollapsed }}" name="dianhua" color="#999" size="30"></oIcon>
+                    <text wx:else class="info-main-label">联系方式</text>
+                    <text class="info-main-text">{{ info.name }} {{ info.addressMobile }}</text>
+                </view>
+                <view class="info-main-row">
+                    <oIcon wx:if="{{ boardCollapsed }}" name="dingwei2" color="#999" size="30"></oIcon>
+                    <text wx:else class="info-main-label">回收地址</text>
+                    <text class="info-main-text">{{ info.addressName }}{{ info.details }}</text>
+                </view>
+            </view>
+
+            <view class="order-info-toggle" wx:if="{{ !boardCollapsed }}">
+                <view class="info-main-row" wx:if="{{ info.remark }}">
+                    <text class="info-main-label">回收备注</text>
+                    <text class="info-main-text">{{ info.remark }}</text>
+                </view>
+
+                <view class="info-main-row" wx:if="{{ info.preMinAmount }}">
+                    <text class="info-main-label">预估金额</text>
+                    <text class="info-main-text">￥{{ info.preMinAmount }} - ￥{{ info.preMaxAmount }}</text>
+                </view>
+
+                <view class="info-main-row" wx:if="{{ info.orderStatus > 3 && !info.cancelTime}}">
+                    <text class="info-main-label">回收金额</text>
+                    <text class="info-main-text">￥{{ info.actualAmount }}</text>
+                </view>
+
+                <view class="info-main-row" wx:if="{{ info.orderStatus > 2 && !info.cancelTime}}">
+                    <text class="info-main-label">支付状态</text>
+                    <text wx:if="{{ info.payStatus === 0 }}" class="info-main-text">待付款</text>
+                    <text wx:if="{{ info.payStatus === 1 }}" class="info-main-text">已付款</text>
+                    <text wx:if="{{ info.payStatus === 2 }}" class="info-main-text">付款失败</text>
+                </view>
+
+                <view class="info-main-row" wx:if="{{ info.payStatus === 1 }}">
+                    <text class="info-main-label">支付时间</text>
+                    <text class="info-main-text">{{ info.payTime }}</text>
+                </view>
+
+                <view class="info-main-row"
+                    wx:if="{{ info.cancelTime }}">
+                    <text class="info-main-label">取消原因</text>
+                    <text class="info-main-text">{{ info.cancelReason }}</text>
+                </view>
+
+                <view class="info-main-row">
+                    <text class="info-main-label">订单类型</text>
+                    <text class="info-main-text" wx:if="{{ info.orderType === 0 }}">预约下单</text>
+                    <text class="info-main-text" wx:if="{{ info.orderType === 1 }}">快捷下单</text>
+                </view>
+
+                <view class="info-main-row" wx:if="{{ info.items.length }}">
+                    <!-- <oIcon name="wupin" color="#999" size="30"></oIcon> -->
+                    <text class="info-main-label">回收物品</text>
+                    <view class="goods-wrap">
+                        <view class="goods-item" wx:for="{{ info.items }}">
+                            <text>{{ item.productName }}</text>
+                            <text>{{ item.preSpec }}</text></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="order-btn-wrap">
+        <view class="order-btn-item order-btn-item--cancel" wx:if="{{ info.orderStatus < 2}}" catchtap="handleCancel">
+            取消订单</view>
+        <view class="order-btn-item order-btn-item--evaluate"
+            wx:if="{{ info.orderStatus === 3 && info.appraiseFlag === 0}}" catchtap="handleEvaluate">去评价
+        </view>
+        <view class="order-btn-item order-btn-item--evaluated"
+            wx:if="{{ info.orderStatus === 3 && info.appraiseFlag === 1}}">已评价</view>
+    </view>
+
+
+</view>
+
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />

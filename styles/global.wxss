@@ -1,4 +1,14 @@
 page {
+      background-color: #f8f8f8;
+      --color-wx: #04BE02;
       --color-main: #313131;
       --color-success: #39b357;
+
+}
+
+.container {
+      height: 100%;
+      width: 100%;
+      background-color: #f8f8f8;
+      /* min-height: 100vh; */
 }

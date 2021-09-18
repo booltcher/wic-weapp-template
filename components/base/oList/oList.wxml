@@ -7,5 +7,5 @@
         <van-divider contentPosition="center" customStyle="margin-bottom:0">{{ dividerText }}</van-divider>
     </view>
     
-    <oEmpty visible="{{ !length }}" icon="{{ emptyIcon }}" tip="{{ emptyTip }}"></oEmpty>
+    <van-empty image="{{emptyIcon}}" description="{{emptyTip}}" />
 </view>

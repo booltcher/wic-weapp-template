@@ -1,0 +1,86 @@
+<view class="container">
+    <!-- Tab -->
+    <view class="tab-wrap">
+        <view wx:for="{{ tabList }}" class="tab-item {{ activeTabKey === item.key ? 'active':'' }}"
+            data-key="{{ item.key }}" bindtap="changeTab">{{ item.title }}</view>
+    </view>
+    <view class="tab-plc"></view>
+
+    <!-- Content -->
+    <oList length="{{list.length}}" more="{{ canLoadMore }}" empty-icon="../../../static/images/empty-order.png"
+        empty-tip="订单">
+        <view class="order-wrap">
+            <view class="order-item" wx:for="{{ list }}" key="{{ item.id }}" data-id="{{ item.id }}"
+                bindtap="navOrderInfo">
+                <view class="order-item-status order-item-status--wait" wx:if="{{ item.orderStatus === 0 }}">等待回收员接单</view>
+                <view class="order-item-status" wx:if="{{ item.orderStatus === 1 }}">已接单</view>
+                <view class="order-item-status" wx:if="{{ item.orderStatus === 2 }}">回收员已出发</view>
+                <view class="order-item-status" wx:if="{{ item.orderStatus === 3 }}">已完成</view>
+                <view class="order-item-status order-item-status--cancel" wx:if="{{ item.orderStatus === 10 }}">已被回收员取消</view>
+                <view class="order-item-status order-item-status--cancel" wx:if="{{ item.orderStatus === 11 }}">已取消</view>
+                <view class="order-item-status order-item-status--cancel" wx:if="{{ item.orderStatus === 12 }}">已被系统取消</view>
+
+                <RecyclerCard name="{{ item.recyclerUsername }}" score="{{ item.score }}"
+                    mobile="{{ item.recyclerMobile }}" count="{{ item.recyclerCount }}"
+                    wx:if="{{ item.orderStatus > 0 && item.recyclerId}}" />
+
+                <view class="order-main">
+                    <view class="order-info-item order-info-item--withbtn">
+                        <view class="order-info-title">订单编号：</view>
+                        <view class="order-info-content order-info-content--withbtn">
+                            <text>{{ item.id }}</text>
+                            <view class="order-num-copy-btn" catchtap="copyOrderNumber" data-number="{{ item.id }}">复制
+                            </view>
+                        </view>
+                    </view>
+
+                    <view class="order-info-item">
+                        <view class="order-info-title">下单时间：</view>
+                        <view class="order-info-content">{{ item.createTime }}</view>
+                    </view>
+
+                    <view class="order-info-item">
+                        <view class="order-info-title">联系方式：</view>
+                        <view class="order-info-content">{{ item.addressName }}{{ item.addressMobile }}</view>
+                    </view>
+
+                    <view class="order-info-item">
+                        <view class="order-info-title">上门地址：</view>
+                        <view class="order-info-content">{{ item.addressDetail }}</view>
+                    </view>
+
+                    <view class="order-info-item" wx:if="{{ item.appointTime }}">
+                        <view class="order-info-title">预约时间：</view>
+                        <view class="order-info-content">{{ item.appointTime }}</view>
+                    </view>
+                </view>
+
+                <view class="order-goods" wx:if="{{ item.items.length }}">
+                    <view class="order-goods-title">
+                        <text>回收物品 共{{ item.items.length }}件</text>
+                        <oIcon name="arrow-right-copy-copy" size="24" color="#999"></oIcon>
+                    </view>
+                </view>
+
+                <view class="order-remark" wx:if="{{ item.remark }}">
+                    <view class="order-info-title">备注</view>
+                    <view class="order-remark-content">{{ item.remark }}</view>
+                </view>
+
+                <view class="order-btn-wrap" wx:if="{{ item.orderStatus < 4 && item.orderStatus !== 2 }}">
+                    <view class="order-btn-item order-btn-item--cancel" wx:if="{{ item.orderStatus < 2 }}"
+                        data-id="{{ item.id }}" catchtap="handleCancel">
+                        取消订单</view>
+                    <view class="order-btn-item order-btn-item--evaluate"
+                        wx:if="{{ item.orderStatus === 3 && item.appraiseFlag === 0}}" data-id="{{ item.id }}"
+                        catchtap="handleEvaluate">去评价</view>
+                    <view class="order-btn-item order-btn-item--evaluated"
+                        wx:if="{{ item.orderStatus === 3 && item.appraiseFlag === 1}}">已评价</view>
+                </view>
+            </view>
+        </view>
+    </oList>
+</view>
+
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />

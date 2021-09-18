@@ -1,0 +1,44 @@
+<view class="container">
+    <view hidden="{{ addressList.length === 0 }}" class="list-wrap">
+        <block wx:for="{{ addressList }}">
+            <view class="list-item">
+                <view class="item-row item-row--name">
+                    <view style="margin-right:30rpx">{{ item.name }}</view>
+                    <view>{{ item.mobile }}</view>
+                </view>
+                <view class="item-row item-row--addr">
+                    <text style="margin-right:30rpx">{{ item.addressName }}</text>
+                    <text>{{ item.details }}</text>
+                </view>
+                <view class="item-row item-row--btn {{ item.defaultFalg === 1? 'item-row--default' : 'item-row--undefault' }}">
+                    <view class="item-default-btn item-default-btn--checked" wx:if="{{ item.defaultFlag === 1}}">
+                        <view class="icon-wrap">
+                            <oIcon name="check" color="#313131"></oIcon>
+                        </view>
+                        <view class="btn-text">已设为默认</view>
+                    </view>
+                    <view class="item-default-btn" wx:else bindtap="setDefault" data-item="{{ item }}">
+                        <view class="btn-text">设为默认</view>
+                    </view>
+                    <view class="item-btn-group">
+                        <oIcon name="bianji" data-item="{{ item }}" bindtap="navEditAddress"></oIcon>
+                        <oIcon name="shanchu" data-item="{{ item }}" bindtap="delInquiry" style="margin-left:20rpx"></oIcon>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <oEmpty image="address" des="暂无收货地址" visible="{{ addressList.length === 0 }}"></oEmpty>
+    <view class="fixed-btn-wrap">
+        <button class="fixed-btn--wx fixed-btn" bindtap="getWxAddress">
+            <oIcon name="weixin" color="#fff" size="40" gr="10"></oIcon>
+            微信地址
+        </button>
+        <button class="fixed-btn--custom fixed-btn" bindtap="navAddAddress">
+            <oIcon name="jiahao1" color="#fff" size="30" gr="10" bold="100"></oIcon>
+            添加收货地址
+        </button>
+    </view>
+</view>
+
+<van-toast id="van-toast" />

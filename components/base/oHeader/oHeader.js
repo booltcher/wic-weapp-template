@@ -1,4 +1,4 @@
-import getHeaderHeight from "../../../utils/getHeaderHeight";
+import CustomHeader from "../../../utils/CustomHeader";
 Component({
     options: {
         multipleSlots: true
@@ -8,7 +8,7 @@ Component({
     },
     lifetimes: {
         async attached() {
-            let { customheaderHeight, paddingTop, innerHeight } = await getHeaderHeight();
+            let { customheaderHeight, paddingTop, innerHeight } = await CustomHeader();
             // let paddingTop = await (await getHeaderHeight()).paddingTop;
             this.setData({
                 innerHeight,

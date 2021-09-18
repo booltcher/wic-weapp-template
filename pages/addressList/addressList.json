@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "oEmpty": "../../components/base/oEmpty/oEmpty"
+  },
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTitleText": "我的地址",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true
+}

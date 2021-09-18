@@ -1,0 +1,41 @@
+<form action="" bindsubmit="submit">
+    <van-cell-group>
+        <van-field label="联系人" value="{{ info.name }}" placeholder="请输入收货人姓名" bind:change="onNameChange" />
+        <van-field label="联系电话" type="number" maxlength="11" value="{{ info.mobile }}" placeholder="请输入收货人联系方式"
+            bind:change="onMobileChange">
+            <van-button slot="button" size="small" color="#fe75a9" bind:click="getBindedMobile" wx:if="{{ bindMobileFlag }}">
+                获取手机号
+            </van-button>
+            <van-button slot="button" size="small" color="#fe75a9" open-type="getPhoneNumber" wx:else bind:getphonenumber="getPhoneNumber" >
+                绑定手机号
+            </van-button>
+        </van-field>
+        <van-cell title="回收地址" is-link title-width="99px">
+            <!-- <picker class="area-picker" mode="region" bindchange="onAreaChange" value="{{ info.area }}">
+                <view class="area-picker">
+                    <text wx:if="{{info.area.length === 0}}" class="plc__text">请选择所在地区</text>
+                    <text wx:else style="color:#404040">{{info.area[0]}} {{info.area[1]}} {{info.area[2]}}</text>
+                </view>
+            </picker> -->
+            <view class="form-item" bindtap="manualLocate">
+                <!-- <oIcon name="round" color="#ff758f" size="20" bold="true"></oIcon> -->
+                <view class="form-inner {{ info.addressName==='回收地点' ? 'plc' : '' }}">{{ info.addressName }}
+                </view>
+                <!-- <oIcon name="dingwei1" color="#999" size="34"></oIcon> -->
+            </view>
+        </van-cell>
+        <van-field label="详细地址" value="{{ info.details }}" type="textarea" autosize="{ maxHeight: 200, minHeight:100 }"
+            placeholder="详细地址，单元，门牌号" bind:change="onDetailsChange" />
+
+        <van-cell title="设为默认地址">
+            <view>
+                <van-switch size="20px" active-color="#fe75a9" inactive-color="#f8f8f8"
+                    checked="{{ info.defaultFlag  }}" bind:change="onDefaultChange" />
+            </view>
+        </van-cell>
+    </van-cell-group>
+
+    <view class="btn submit__btn" bindtap="submit">保存</view>
+</form>
+
+<van-toast id="van-toast" />

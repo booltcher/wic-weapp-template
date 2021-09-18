@@ -1,0 +1,26 @@
+<!-- 地址弹窗 -->
+<van-popup show="{{ visible }}" round position="bottom"
+    custom-style="height: 350px;padding: 15px 17px;box-sizing:border-box" bind:close="onClose" close-on-click-overlay
+    closeable close-icon="close">
+    <view class="popup__title">选择地址</view>
+    <scroll-view class="opt__wrap" scroll-y>
+        <block wx:for="{{ list }}" wx:for-item="item">
+            <view class="list-item {{ showActive && item.id === activeAddress.id ? 'active' : '' }}"
+                bindtap="handleAddressEvent" data-item="{{ item }}">
+                <view class="item-content">
+                    <view class="item-row item-row--1">
+                        <view style="margin-right:30rpx">{{ item.name }}</view>
+                        <view>{{ item.mobile }}</view>
+                    </view>
+                    <view class="item-row item-row--2">
+                        <text style="margin-right:30rpx">{{ item.addressName }}</text>
+                        <text>{{ item.details }}</text>
+                    </view>
+                </view>
+                <oIcon name="check" color="#fe75a9" wx:if="{{ showActive && item.id === activeAddress.id }}"></oIcon>
+            </view>
+        </block>
+        <view wx:if="{{ !list.length }}" class="empty-list-tip">暂无地址</view>
+    </scroll-view>
+    <view class="nav__create__btn" bindtap="navCreateAddress">新增地址</view>
+</van-popup>

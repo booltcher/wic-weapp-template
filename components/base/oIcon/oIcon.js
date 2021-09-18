@@ -13,8 +13,24 @@ Component({
       value: "#333"
     },
     bold:{
-      type: Boolean,
-      value: false
+      type: String,
+      value: 'normal'
+    },
+    gl:{
+      type: Number,
+      value: 0
+    },
+    gr:{
+      type: Number,
+      value: 0
+    },
+    gb:{
+      type: Number,
+      value: 0
+    },
+    gt:{
+      type: Number,
+      value: 0
     },
   },
   data: {
