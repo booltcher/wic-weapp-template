@@ -65,14 +65,14 @@ Page({
 
   navAddAddress() {
     wx.navigateTo({
-      url: "/pages/User/addressInfo/addressInfo",
+      url: "/pages/addressInfo/addressInfo",
     });
   },
 
   navEditAddress(e) {
     let item = encodeURIComponent(JSON.stringify(e.currentTarget.dataset.item));
     wx.navigateTo({
-      url: `/pages/User/addressInfo/addressInfo?item=${item}`,
+      url: `/pages/addressInfo/addressInfo?item=${item}`,
     });
   },
 

@@ -1,18 +1,3 @@
-.submit__btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color_main);
-    width: 330rpx;
-    color: #404040;
-    margin: 0 auto;
-    margin-top: 140rpx;
-    height: 70rpx;
-    border-radius: 70rpx;
-    font-size: 28rpx;
-    color: #fff;
-}
-
 /* .area-picker {
     width: 100%;
     text-align: left;
@@ -43,4 +28,19 @@
 }
 .form-item .form-inner.plc{
     color: #c8c9cc;
+}
+
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-main);
+    width: 330rpx;
+    color: #404040;
+    margin: 0 auto;
+    margin-top: 140rpx;
+    height: 70rpx;
+    border-radius: 70rpx;
+    font-size: 28rpx;
+    color: #fff;
 }
