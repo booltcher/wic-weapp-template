@@ -2,7 +2,7 @@
     padding-top: 140rpx;
 }
 .exp-btn{
-    background-color: #313131;
+    background-color: var(--color-main);
     margin-bottom: 20rpx;
     color: #fff;
     width: 600rpx;

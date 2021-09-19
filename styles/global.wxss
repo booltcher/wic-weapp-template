@@ -1,14 +1,74 @@
 page {
-      background-color: #f8f8f8;
-      --color-wx: #04BE02;
-      --color-main: #313131;
-      --color-success: #39b357;
-
+  background-color: #f8f8f8;
+  --color-wx: #67c23a;
+  --color-main: #313131;
+  --color-success: #39b357;
+  --color-border: #eeeeee;
 }
 
 .container {
-      height: 100%;
-      width: 100%;
-      background-color: #f8f8f8;
-      /* min-height: 100vh; */
+  height: 100%;
+  width: 100%;
+  background-color: #f8f8f8;
+  /* min-height: 100vh; */
+}
+.flx {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auto {
+  margin: 0 auto;
+}
+.shadow {
+  box-shadow: 0rpx 1rpx 20rpx 2rpx rgba(1, 1, 1, 0.1);
+}
+.ovfl1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ovfl2 {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ovfl3 {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.g10 {
+  margin: 10rpx;
+}
+.gr10 {
+  margin-right: 10rpx;
+}
+.gl10 {
+  margin-left: 10rpx;
+}
+.gt10 {
+  margin-top: 10rpx;
+}
+.gb10 {
+  margin-bottom: 10rpx;
+}
+.gr20 {
+  margin-right: 20rpx;
+}
+.gl20 {
+  margin-left: 20rpx;
+}
+.gt20 {
+  margin-top: 20rpx;
+}
+.gb20 {
+  margin-bottom: 20rpx;
 }

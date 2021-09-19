@@ -1,0 +1,31 @@
+<view class="address-cell {{mode}}" bindtap="emitChangeEvent">
+    <view class="cell-active-wrap">
+        <view class="cell-active">
+            <oIcon name="icon-icon-test31" color="#fff" wx:if="{{ active }}" size="34"></oIcon>
+        </view>
+        <view class="cell-active-bg" wx:if="{{ active }}"></view>
+    </view>
+    <view class="cell-info">
+        <view class="cell-row cell-row--main">
+            <view style="margin-right:30rpx">{{ name }}</view>
+            <view>{{ mobile }}</view>
+        </view>
+        <view class="cell-row cell-row--sub">
+            <view style="margin-right:30rpx">{{ addressName }}</view>
+            <view>{{ details }}</view>
+        </view>
+    </view>
+    <view class="cell-action" wx:if="{{!hideActions}}">
+        <view class="cell-action-left">
+            <view class="cell-default-badge" wx:if="{{ defaultFlag }}">默认</view>
+            <view class="cell-default-btn flx" catchtap="setDefault" wx:else>
+                <oIcon name="icon-xitongshezhi" size="30" color="#575655" gr="4"></oIcon>
+                <view>设为默认</view>
+            </view>
+        </view>
+        <view class="cell-action-right">
+            <oIcon name="icon-icon_delete" size="40" gr="20" catchtap="delInquiry"></oIcon>
+            <oIcon name="icon-icon_write" size="40" catchtap="navEditAddress"></oIcon>
+        </view>
+    </view>
+</view>

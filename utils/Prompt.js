@@ -1,4 +1,5 @@
 import Toast from "../miniprogram_npm/@vant/weapp/toast/toast";
+
 const toastDefaultConfig = {
   success: {
     type: "success",
@@ -68,7 +69,7 @@ export function Dialog(options) {
       title: options.title,
       content: options.message,
       showCancel: options.showCancelButton,
-      confirmColor: "#39b357",
+      confirmColor: getApp().globalData.THEME_COLOR,
       cancelColor: "#999",
       success(res) {
         if (res.confirm) {

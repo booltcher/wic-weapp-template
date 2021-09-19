@@ -1,8 +1,14 @@
-<view class="container">
-    <view hidden="{{ addressList.length === 0 }}" class="list-wrap">
-        <block wx:for="{{ addressList }}">
+<!-- 地址弹窗 -->
+<van-popup show="{{ visible }}" round position="bottom"
+    custom-style="height: 400px;padding: 15px 15px;box-sizing:border-box" bind:close="onSelectorClose" close-on-click-overlay
+    closeable close-icon="close">
+    <view class="popup-title">选择地址</view>
+    <scroll-view class="opt-wrap" scroll-y>
+        <block wx:for="{{ list }}" wx:for-item="item">
             <AddressCell
                 cid="{{item.id}}"
+                mode="list"
+                active="{{item.id === activeAddress.id}}"
                 name="{{item.name}}"
                 mobile="{{item.mobile}}"
                 defaultFlag="{{item.defaultFlag}}"
@@ -10,10 +16,13 @@
                 details="{{item.details}}"
                 latitude="{{item.latitude}}"
                 longitude="{{item.longitude}}"
+                hide-actions="{{true}}"
+                bind:change="handleAddressChange"
             ></AddressCell>
         </block>
-    </view>
-    <oEmpty image="address" des="暂无收货地址" visible="{{ addressList.length === 0 }}"></oEmpty>
+        <view wx:if="{{ !list.length }}" class="empty-list-tip">暂无地址</view>
+    </scroll-view>
+    <!-- <view class="nav-create-btn" bindtap="navCreateAddress">新增地址</view> -->
     <view class="fixed-btn-wrap">
         <button class="fixed-btn--wx fixed-btn" bindtap="getWxAddress">
             <oIcon name="icon-weixin" color="#fff" size="40" gr="10"></oIcon>
@@ -24,6 +33,4 @@
             添加收货地址
         </button>
     </view>
-</view>
-
-<van-toast id="van-toast" />
+</van-popup>

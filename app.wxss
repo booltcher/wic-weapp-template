@@ -1,2 +1,2 @@
-@import './styles/reset.wxss';
-@import './styles/global.wxss';
+@import "./styles/reset.wxss";
+@import "./styles/global.wxss";

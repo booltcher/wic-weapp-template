@@ -1,1 +1,1 @@
-<i class="iconfont icon-{{name}}` custom-icon" style="color:{{color}};font-size:{{size}}rpx;font-weight:{{bold}};margin-top:{{gt}}rpx;margin-left:{{gl}}rpx;margin-bottom:{{gb}}rpx;margin-right:{{gr}}rpx;"></i>
+<i class="iconfont {{name}}` custom-icon" style="color:{{color}};font-size:{{size}}rpx;font-weight:{{bold}};margin-top:{{gt}}rpx;margin-left:{{gl}}rpx;margin-bottom:{{gb}}rpx;margin-right:{{gr}}rpx;"></i>

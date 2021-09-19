@@ -27,9 +27,18 @@ Component({
         name: "王大锤",
       },{
         addressName: "黄龙岛桂花超市南门",
-        defaultFlag: 1,
+        defaultFlag: 0,
         details: "2714",
         id: "2",
+        latitude: "34.3404",
+        longitude: "108.94162",
+        mobile: "15675444444",
+        name: "王二",
+      },{
+        addressName: "黄龙岛桂花超市南门",
+        defaultFlag: 0,
+        details: "2714",
+        id: "3",
         latitude: "34.3404",
         longitude: "108.94162",
         mobile: "15675444444",
@@ -45,49 +54,40 @@ Component({
   },
 
   methods: {
-    onClose() {
+    onSelectorClose() {
       this.triggerEvent("close");
     },
 
     navCreateAddress() {
       this.triggerEvent("close");
       wx.navigateTo({
-        url: "/pages/User/addressInfo/addressInfo",
-      });
-    },
-
-    navEditAddress(e) {
-      this.triggerEvent("close");
-      let item = JSON.stringify(e.currentTarget.dataset.item);
-      wx.navigateTo({
-        url: `/pages/User/addressInfo/addressInfo?item=${item}`,
+        url: "/pages/addressInfo/addressInfo",
       });
     },
 
     async getAddressList() {
       try {
-        let res = await getAddressList({}, false);
+        const res = await getAddressList(null, false);
         if (res.code === "200") {
-          let defaultValue = res.data.find((item) => item.defaultFlag === 1);
+          const defaultValue = res.data.find((item) => item.defaultFlag === 1);
           if (defaultValue) {
             this.triggerEvent("update", defaultValue);
           }
-          //   this.setData({
-          //     list: res.data,
-          //     activeAddress: defaultValue,
-          //   });
+          this.setData({
+            list: res.data,
+            activeAddress: defaultValue,
+          });
         }
       } catch (error) {
         console.log(error);
       }
     },
 
-    handleAddressEvent(e) {
-      let item = e.currentTarget.dataset.item;
+    handleAddressChange(e) {
       this.setData({
-        activeAddress: item,
-      });
-      this.triggerEvent("change", item);
+        activeAddress: e.detail
+      })
+      this.triggerEvent("change", e.detail);
     },
   },
 

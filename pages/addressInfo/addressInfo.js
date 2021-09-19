@@ -1,4 +1,5 @@
 import { createAddress, modifyAddress, bindMobile } from "../../services/api.js";
+import SyncThemeFromGlobal from "../../utils/SyncThemeFromGlobal.js";
 import Prompt from "../../utils/Prompt";
 import FormValidator from "../../utils/FormValidator";
 import ManualLocate from "../../utils/ManualLocate";
@@ -6,6 +7,7 @@ const app = getApp();
 
 Page({
   data: {
+    THEME_COLOR: null,
     info: {
       name: "",
       mobile: "",
@@ -34,6 +36,7 @@ Page({
     ],
   },
   async onLoad(options) {
+    SyncThemeFromGlobal(this)
     this.setData({
       bindMobileFlag: app.globalData.userInfo.bindMobileFlag,
     });

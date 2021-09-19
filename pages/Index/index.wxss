@@ -29,7 +29,7 @@
   font-size: 30rpx;
   padding: 10rpx 0 10rpx 50rpx;
   padding-bottom: 10rpx;
-  color: #313131;
+  color: var(--color-main);
   position: relative;
 }
 .index-block-title::before {

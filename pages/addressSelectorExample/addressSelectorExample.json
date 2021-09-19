@@ -5,6 +5,6 @@
   "navigationBarTextStyle": "black",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "address-picker": "../../components/business/addressPicker/addressPicker"
+    "AddressSelector": "../../components/business/AddressSelector/AddressSelector"
   }
 }

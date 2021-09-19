@@ -1,29 +1,35 @@
-page{
-  background-color: #fff;
-}
-.container {
-  padding-bottom: 130rpx;
-  background-color: #fff;
+.opt-wrap {
+  height: 270px;
+  margin-top: 10px;
+  padding-bottom: 0 10rpx 10px;
+  width: 100%;
 }
 
-.list-wrap {
-  padding-top: 30rpx;
-  padding-bottom: 30rpx;
+.nav-create-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 260rpx;
+  height: 30px;
+  background: var(--color-main);
+  color: #fff;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  margin: 10px auto 0;
 }
 
 .fixed-btn-wrap {
-  position: fixed;
-  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 100%;
   padding: 30rpx 0;
-  background-color: #fff;
+  box-sizing: border-box;
+  border-top: 1px solid var(--color-border);
 }
 
 .fixed-btn {
-  width: 330rpx;
+  width: 300rpx;
   height: 70rpx;
   border-radius: 70rpx;
   display: flex;

@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "oEmpty": "../../components/base/oEmpty/oEmpty"
+    "oEmpty": "../../components/base/oEmpty/oEmpty",
+    "AddressCell": "../../components/business/AddressCell/AddressCell"
   },
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTitleText": "我的地址",
