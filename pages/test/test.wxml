@@ -1,0 +1,4 @@
+<view class="container">
+    <button class="exp-btn" bindtap="showAddressPicker">Show Address Picker</button>
+</view>
+<address-picker visible="{{ addressPickerVisible }}" bind:update="handleAddressPickerUpdate" bind:close="hideAddressPicker" bind:change="handleAddressPickerChange" showActive="{{ true }}"></address-picker>

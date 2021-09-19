@@ -24,14 +24,12 @@ App({
     REQUEST_BASE_URL: "https://api.test.com",
     REQUEST_TIMEOUT: 10000,
 
-    // BASE_URL:'http://zhangbro.top',
     EARLIEST_SUB_TIME: 9,
     LATEST_SUB_TIME: 20,
     SUB_TIME_INTERVAL: 2, //间隔
     SUB_TIME_DELAY: 2, //延迟多久后可预约
     userInfo: null,
     token: "",
-    // token:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvYmlTXzVUeVlLeTRnLXVjRTEweDhIdEZiaVRNIiwiaXNzIjoidG9ieTEyMTVAMTYzLmNvbSIsImRldGFpbHMiOiJ7XCJsb2dpbklwXCI6XCIxMjcuMC4wLjFcIn0iLCJleHAiOjE2MjkzMDA2NDAsImlhdCI6MTYyODY5NTg0MCwianRpIjoiMTQyNTQ3OTc4OTU2NjIzODcyMSJ9.TpYcF-wju-YxZC4OP77i6QssDRRk6aN-6vq_veR7H44",
-    themeColor: "#eb4450",
+    THEME_COLOR: "#313131",
   },
 });

@@ -1,0 +1,9 @@
+.container{
+    padding-top: 140rpx;
+}
+.exp-btn{
+    background-color: #313131;
+    margin-bottom: 20rpx;
+    color: #fff;
+    width: 600rpx;
+}
