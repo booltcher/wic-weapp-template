@@ -1,5 +1,5 @@
 import { getAddressList } from "../../../services/api.js";
-import SyncThemeFromGlobal from "../../../utils/SyncThemeFromGlobal.js";
+import SyncThemeFromGlobal from "../../../utils/syncThemeFromGlobal.js";
 Component({
   properties: {
     visible: {

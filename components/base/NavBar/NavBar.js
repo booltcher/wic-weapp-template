@@ -1,4 +1,4 @@
-import CustomHeader from "../../../utils/CustomHeader";
+import obtainNavBarInfo from "../../../utils/obtainNavBarInfo";
 Component({
     options: {
         multipleSlots: true
@@ -8,7 +8,7 @@ Component({
     },
     lifetimes: {
         async attached() {
-            let { customheaderHeight, paddingTop, innerHeight } = await CustomHeader();
+            let { customheaderHeight, paddingTop, innerHeight } = await obtainNavBarInfo();
             // let paddingTop = await (await getHeaderHeight()).paddingTop;
             this.setData({
                 innerHeight,

@@ -1,7 +1,7 @@
 {
     "component": true,
     "usingComponents": {
-        "van-empty": "@vant/weapp/empty/index",
+        "Empty": "../Empty/Empty",
         "van-divider": "@vant/weapp/divider/index"
     }
 }

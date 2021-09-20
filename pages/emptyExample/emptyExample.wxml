@@ -1,0 +1,19 @@
+<!-- usage example, can be deleted -->
+<view class="container">
+    <Empty image='chart' des="暂无数据" visible="true">
+        <button>Slot Button</button>
+    </Empty>
+    <Empty image='access' des="暂无权限" visible="true"></Empty>
+    <Empty image='order' des="暂无订单" visible="true"></Empty>
+    <Empty image='record' des="暂无记录" visible="true"></Empty>
+
+    <Empty image='location' des="暂无地址" visible="true"></Empty>
+    <Empty image='server' des="服务器异常" visible="true"></Empty>
+    <Empty image='building' des="功能建设中" visible="true"></Empty>
+    <Empty image='network' des="网络请求失败" visible="true"></Empty>
+
+    <Empty image='search' des="换个关键词试试吧" visible="true"></Empty>
+    <Empty image='product' des="购物车空空如也" visible="true"></Empty>
+    <Empty image='message' des="暂无消息" visible="true"></Empty>
+    <Empty image='welfare' des="暂无权益" visible="true"></Empty>
+</view>

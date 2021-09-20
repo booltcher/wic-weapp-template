@@ -1,11 +1,11 @@
 <!-- usage example, can be deleted -->
 <view class="container">
-    <button class="exp-btn" bindtap="showAddressPicker">Show Address Picker</button>
+    <button class="exp-btn" bindtap="showSelector">Show Address Selector</button>
 </view>
 <AddressSelector 
-    visible="{{ addressPickerVisible }}"
-    bind:update="handleAddressPickerUpdate" 
-    bind:close="hideAddressPicker" 
-    bind:change="handleAddressPickerChange" 
+    visible="{{ selectorVisible }}"
+    bind:update="handleSelectorUpdate" 
+    bind:close="hideSelector" 
+    bind:change="handleSelectorChange" 
     showActive="{{ true }}"
 ></AddressSelector>

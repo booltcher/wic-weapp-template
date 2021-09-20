@@ -1,47 +1,9 @@
 import { getAddressList, createAddress } from "../../services/api.js";
-import Prompt from "../../utils/Prompt";
+import Prompt from "../../utils/prompt";
 
 Page({
   data: {
-    addressList: [{
-        addressName: "禧悦轩茶馆",
-        defaultFlag: 1,
-        details: "2714",
-        id: "1",
-        latitude: "34.3404",
-        longitude: "108.94162",
-        mobile: "15675444444",
-        name: "王大锤",
-      },
-      {
-        addressName: "禧悦轩茶馆",
-        defaultFlag: 0,
-        details: "2714",
-        id: "2",
-        latitude: "34.3404",
-        longitude: "108.94162",
-        mobile: "15675444444",
-        name: "王大锤",
-      },{
-        addressName: "禧悦轩茶馆",
-        defaultFlag: 1,
-        details: "2714",
-        id: "1",
-        latitude: "34.3404",
-        longitude: "108.94162",
-        mobile: "15675444444",
-        name: "王大锤",
-      },
-      {
-        addressName: "禧悦轩茶馆",
-        defaultFlag: 0,
-        details: "2714",
-        id: "2",
-        latitude: "34.3404",
-        longitude: "108.94162",
-        mobile: "15675444444",
-        name: "王大锤",
-      },
+    addressList: [
       {
         addressName: "禧悦轩茶馆",
         defaultFlag: 1,
@@ -61,7 +23,7 @@ Page({
         longitude: "108.94162",
         mobile: "15675444444",
         name: "王大锤",
-      },
+      }
     ],
   },
   async onLoad() {},

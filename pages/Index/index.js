@@ -1,16 +1,16 @@
 import { getExample } from "../../services/api.js";
-import Prompt from "../../utils/Prompt.js";
+import Prompt from "../../utils/prompt";
 const App = getApp();
 Page({
   data: {
     kits: [
-      "Network",
-      "Paging",
-      "Iconfont",
+      "Network Request",
+      "Paging List",
+      "Icon Font",
       "Form Validator",
-      "Address-picker",
-      "Coupon",
-      "Product-card",
+      "Address Selector",
+      "Product Card",
+      "Nav Bar",
     ],
     modules: [
       "Address",
@@ -22,6 +22,7 @@ Page({
       "Category",
       "Product",
       "Evaluate",
+      "Coupon",
     ],
   },
 

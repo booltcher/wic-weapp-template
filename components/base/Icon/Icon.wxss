@@ -1,4 +1,4 @@
-@import './icon.wxss';
+@import './iconfont.wxss';
 .custom-icon{
   display: flex;
   flex-shrink: 0;

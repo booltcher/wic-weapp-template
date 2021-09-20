@@ -1,0 +1,12 @@
+
+<view class="list-com">
+    <view class="list-com__wrap">
+        <slot></slot>
+    </view>
+
+    <view class="list-com__tip" wx:if="{{!hideTip && length}}">
+        <van-divider contentPosition="center" customStyle="margin-bottom:0">{{dividerText}}</van-divider>
+    </view>
+
+    <Empty image="{{emptyIcon}}" des="{{emptyTip}}" visible="{{!length}}"></Empty>
+</view>

@@ -1,9 +1,10 @@
 {
 	"pages": [
-		"pages/test/test",
-		"pages/addressList/addressList",
-		"pages/addressInfo/addressInfo",
 		"pages/index/index",
+		"pages/emptyExample/emptyExample",
+		"pages/addressList/addressList",
+		"pages/addressSelectorExample/addressSelectorExample",
+		"pages/addressInfo/addressInfo",
 		"pages/authorize/authorize",
 		"pages/user/user"
 	],
@@ -16,7 +17,7 @@
 	"sitemapLocation": "sitemap.json",
 	"usingComponents": {
 		"van-toast": "@vant/weapp/toast/index",
-		"oIcon": "/components/base/oIcon/oIcon"
+		"Icon": "/components/base/Icon/Icon"
 	},
 	"permission": {
 		"scope.userLocation": {

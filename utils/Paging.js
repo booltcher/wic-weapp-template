@@ -1,5 +1,5 @@
 import services from "../services/api.js";
-import Prompt from "./Prompt";
+import prompt from "./prompt";
 
 class Paging {
   constructor({ context, pagingName, requestApi, size, params }) {
@@ -33,7 +33,7 @@ class Paging {
   }
 
   async query(isInitial = false, payload) {
-    Prompt.loading();
+    prompt.loading();
     try {
       const params = payload || this.params;
       const res = await services[this.requestApi]({
@@ -60,7 +60,7 @@ class Paging {
     } catch (err) {
       console.log(err);
     } finally {
-      Prompt.clear();
+      prompt.clear();
     }
   }
 }

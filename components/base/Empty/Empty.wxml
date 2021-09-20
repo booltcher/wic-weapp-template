@@ -1,0 +1,13 @@
+<view class="empty-com" wx:if="{{visible}}">
+  <view class="empty-com__image">
+    <image wx:if="{{ image }}" class="empty-com__image__img" src="{{ imageUrl }}" />
+  </view>
+
+  <view class="empty-com__description">
+    {{ des }}
+  </view>
+
+  <view class="empty-com__bottom">
+    <slot></slot>
+  </view>
+</view>

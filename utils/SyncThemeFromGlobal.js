@@ -1,6 +1,6 @@
-const SyncThemeFromGlobal = (ctx) => {
+const syncThemeFromGlobal = (ctx) => {
     ctx.setData({
         THEME_COLOR: getApp().globalData.THEME_COLOR
     })
 }
-export default SyncThemeFromGlobal
+export default syncThemeFromGlobal

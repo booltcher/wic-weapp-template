@@ -1,4 +1,4 @@
-const Customheader = async () => {
+const obtainNavBarInfo = async () => {
     const systemInfo = await wx.getSystemInfoSync()
     const menuButton = await wx.getMenuButtonBoundingClientRect()
     let customheaderHeight = systemInfo.statusBarHeight + menuButton.height + (menuButton.top - systemInfo.statusBarHeight) * 2
@@ -10,4 +10,4 @@ const Customheader = async () => {
         innerHeight
     }
 }
-export default Customheader
+export default obtainNavBarInfo

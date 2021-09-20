@@ -12,7 +12,7 @@
             </view>
             <view class="status-icon">
                 <text class="status-icon-text">等待接单</text>
-                <oIcon name="round" color="#fff" size="38"></oIcon>
+                <Icon name="round" color="#fff" size="38"></Icon>
             </view>
         </view>
 
@@ -23,7 +23,7 @@
             </view>
             <view class="status-icon">
                 <text class="status-icon-text">已接单</text>
-                <oIcon name="wuliuqiache2" color="#fff" size="38"></oIcon>
+                <Icon name="wuliuqiache2" color="#fff" size="38"></Icon>
             </view>
         </view>
 
@@ -34,7 +34,7 @@
             </view>
             <view class="status-icon">
                 <text class="status-icon-text">回收员已出发</text>
-                <oIcon name="check" color="#fff" size="38"></oIcon>
+                <Icon name="check" color="#fff" size="38"></Icon>
             </view>
         </view>
 
@@ -45,7 +45,7 @@
             </view>
             <view class="status-icon">
                 <text class="status-icon-text">已完成</text>
-                <oIcon name="check" color="#fff" size="38"></oIcon>
+                <Icon name="check" color="#fff" size="38"></Icon>
             </view>
         </view>
 
@@ -57,7 +57,7 @@
             </view>
             <view class="status-icon">
                 <text class="status-icon-text">已取消</text>
-                <oIcon name="icon-test10" color="#fff" size="38"></oIcon>
+                <Icon name="icon-test10" color="#fff" size="38"></Icon>
             </view>
         </view>
 
@@ -66,22 +66,22 @@
 
         <view class="order-info {{ boardCollapsed ? 'collapsed' : '' }}">
             <view class="order-info-collapse-btn" catchtap="collapseInfoBoard">
-                <oIcon name="{{ boardCollapsed ? 'shangjiantou_huaban' : 'xiajiantou'}}" size="24" color="#999"></oIcon>
+                <Icon name="{{ boardCollapsed ? 'shangjiantou_huaban' : 'xiajiantou'}}" size="24" color="#999"></Icon>
             </view>
 
             <view class="order-info-main">
                 <view class="info-main-row" wx:if="{{info.appointTime}}">
-                    <oIcon wx:if="{{ boardCollapsed }}" name="shijianzhongbiao2" color="#999" size="30"></oIcon>
+                    <Icon wx:if="{{ boardCollapsed }}" name="shijianzhongbiao2" color="#999" size="30"></Icon>
                     <text wx:else class="info-main-label">预约时间</text>
                     <text class="info-main-text">{{ info.appointTime }}</text>
                 </view>
                 <view class="info-main-row">
-                    <oIcon wx:if="{{ boardCollapsed }}" name="dianhua" color="#999" size="30"></oIcon>
+                    <Icon wx:if="{{ boardCollapsed }}" name="dianhua" color="#999" size="30"></Icon>
                     <text wx:else class="info-main-label">联系方式</text>
                     <text class="info-main-text">{{ info.name }} {{ info.addressMobile }}</text>
                 </view>
                 <view class="info-main-row">
-                    <oIcon wx:if="{{ boardCollapsed }}" name="dingwei2" color="#999" size="30"></oIcon>
+                    <Icon wx:if="{{ boardCollapsed }}" name="dingwei2" color="#999" size="30"></Icon>
                     <text wx:else class="info-main-label">回收地址</text>
                     <text class="info-main-text">{{ info.addressName }}{{ info.details }}</text>
                 </view>
@@ -128,7 +128,7 @@
                 </view>
 
                 <view class="info-main-row" wx:if="{{ info.items.length }}">
-                    <!-- <oIcon name="wupin" color="#999" size="30"></oIcon> -->
+                    <!-- <Icon name="wupin" color="#999" size="30"></Icon> -->
                     <text class="info-main-label">回收物品</text>
                     <view class="goods-wrap">
                         <view class="goods-item" wx:for="{{ info.items }}">

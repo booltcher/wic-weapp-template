@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "@vant/weapp": "^1.6.4",
-    "miniprogram-api-promise": "^1.0.4"
+    "miniprogram-api-promise": "^1.0.4",
+    "miniprogram-computed": "^4.2.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

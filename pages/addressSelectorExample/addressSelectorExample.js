@@ -1,27 +1,27 @@
 //Just for exmple
 Page({
   data: {
-    addressPickerVisible: false,
+    selectorVisible: false,
   },
 
   //Events handler
-  showAddressPicker() {
+  showSelector() {
     this.setData({
-      addressPickerVisible: true,
+      selectorVisible: true,
     });
   },
 
-  hideAddressPicker() {
+  hideSelector() {
     this.setData({
-      addressPickerVisible: false,
+      selectorVisible: false,
     });
   },
 
-  handleAddressPickerChange(e) {
+  handleSelectorChange(e) {
     const { addressName, details, name, mobile, longitude, latitude } =
       e.detail;
     this.setData({
-      addressPickerVisible: false,
+      selectorVisible: false,
       addressForm: "app",
       "formData.addressName": addressName,
       "formData.details": details,
@@ -32,7 +32,7 @@ Page({
     });
   },
 
-  handleAddressPickerUpdate(e) {
-    console.log('update', e);
+  handleSelectorUpdate(e) {
+    console.log("update", e);
   },
 });

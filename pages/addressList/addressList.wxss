@@ -2,6 +2,7 @@ page{
   background-color: #fff;
 }
 .container {
+  padding-top: 20rpx;
   padding-bottom: 130rpx;
   background-color: #fff;
 }

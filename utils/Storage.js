@@ -1,4 +1,4 @@
-import Prompt from "./Prompt.js";
+import Prompt from "./prompt.js";
 const STORAGE_KEY = 'goods'
 
 export const setGoodStorage = (section) => {

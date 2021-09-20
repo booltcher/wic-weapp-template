@@ -1,4 +1,4 @@
-// components/base/oIcon/oIcon.js
+// components/base/Icon/Icon.js
 Component({
   properties: {
     name:{

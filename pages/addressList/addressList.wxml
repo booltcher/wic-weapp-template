@@ -1,27 +1,20 @@
 <view class="container">
-    <view hidden="{{ addressList.length === 0 }}" class="list-wrap">
+    <List length="{{addressList.length}}" more="{{false}}" emptyIcon="location" emptyTip="暂无地址" hideTip="{{false}}">
         <block wx:for="{{ addressList }}">
-            <AddressCell
-                cid="{{item.id}}"
-                name="{{item.name}}"
-                mobile="{{item.mobile}}"
-                defaultFlag="{{item.defaultFlag}}"
-                addressName="{{item.addressName}}"
-                details="{{item.details}}"
-                latitude="{{item.latitude}}"
-                longitude="{{item.longitude}}"
-            ></AddressCell>
+            <AddressCell cid="{{item.id}}" name="{{item.name}}" mobile="{{item.mobile}}"
+                defaultFlag="{{item.defaultFlag}}" addressName="{{item.addressName}}" details="{{item.details}}"
+                latitude="{{item.latitude}}" longitude="{{item.longitude}}"></AddressCell>
         </block>
-    </view>
-    <oEmpty image="address" des="暂无收货地址" visible="{{ addressList.length === 0 }}"></oEmpty>
+    </List>
+
     <view class="fixed-btn-wrap">
         <button class="fixed-btn--wx fixed-btn" bindtap="getWxAddress">
-            <oIcon name="icon-weixin" color="#fff" size="40" gr="10"></oIcon>
+            <Icon name="icon-weixin" color="#fff" size="40" gr="10"></Icon>
             微信地址
         </button>
         <button class="fixed-btn--custom fixed-btn" bindtap="navAddAddress">
-            <oIcon name="icon-add1" color="#fff" size="30" gr="10" bold="100"></oIcon>
-            添加收货地址
+            <Icon name="icon-add1" color="#fff" size="30" gr="10" bold="100"></Icon>
+            添加地址
         </button>
     </view>
 </view>

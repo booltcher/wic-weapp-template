@@ -1,5 +1,5 @@
-import Prompt from "./Prompt.js";
-const ManualLocate = async () => {
+import Prompt from "./prompt.js";
+const manualLocate = async () => {
     let setting = await wx.getSetting()
     if (setting && !setting.authSetting['scope.userLocation']) {
         Prompt.dialog({
@@ -29,4 +29,4 @@ const ManualLocate = async () => {
         return null
     }
 }
-export default ManualLocate
+export default manualLocate

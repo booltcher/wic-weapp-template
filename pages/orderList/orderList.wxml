@@ -7,7 +7,7 @@
     <view class="tab-plc"></view>
 
     <!-- Content -->
-    <oList length="{{list.length}}" more="{{ canLoadMore }}" empty-icon="../../../static/images/empty-order.png"
+    <List length="{{list.length}}" more="{{ canLoadMore }}" empty-icon="../../../static/images/empty-order.png"
         empty-tip="订单">
         <view class="order-wrap">
             <view class="order-item" wx:for="{{ list }}" key="{{ item.id }}" data-id="{{ item.id }}"
@@ -58,7 +58,7 @@
                 <view class="order-goods" wx:if="{{ item.items.length }}">
                     <view class="order-goods-title">
                         <text>回收物品 共{{ item.items.length }}件</text>
-                        <oIcon name="arrow-right-copy-copy" size="24" color="#999"></oIcon>
+                        <Icon name="arrow-right-copy-copy" size="24" color="#999"></Icon>
                     </view>
                 </view>
 
@@ -79,7 +79,7 @@
                 </view>
             </view>
         </view>
-    </oList>
+    </List>
 </view>
 
 <van-toast id="van-toast" />

@@ -1,8 +1,8 @@
 import { createAddress, modifyAddress, bindMobile } from "../../services/api.js";
-import SyncThemeFromGlobal from "../../utils/SyncThemeFromGlobal.js";
-import Prompt from "../../utils/Prompt";
-import FormValidator from "../../utils/FormValidator";
-import ManualLocate from "../../utils/ManualLocate";
+import SyncThemeFromGlobal from "../../utils/syncThemeFromGlobal.js";
+import Prompt from "../../utils/prompt";
+import FormValidator from "../../utils/formValidator";
+import manualLocate from "../../utils/manualLocate";
 const app = getApp();
 
 Page({
@@ -91,7 +91,7 @@ Page({
   },
 
   async manualLocate() {
-    const res = await ManualLocate();
+    const res = await manualLocate();
     if (res) {
       this.setData({
         "info.addressName": res.addressName,

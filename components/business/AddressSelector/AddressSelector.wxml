@@ -22,15 +22,14 @@
         </block>
         <view wx:if="{{ !list.length }}" class="empty-list-tip">暂无地址</view>
     </scroll-view>
-    <!-- <view class="nav-create-btn" bindtap="navCreateAddress">新增地址</view> -->
     <view class="fixed-btn-wrap">
         <button class="fixed-btn--wx fixed-btn" bindtap="getWxAddress">
-            <oIcon name="icon-weixin" color="#fff" size="40" gr="10"></oIcon>
+            <Icon name="icon-weixin" color="#fff" size="40" gr="10"></Icon>
             微信地址
         </button>
         <button class="fixed-btn--custom fixed-btn" bindtap="navAddAddress">
-            <oIcon name="icon-add1" color="#fff" size="30" gr="10" bold="100"></oIcon>
-            添加收货地址
+            <Icon name="icon-add1" color="#fff" size="30" gr="10" bold="100"></Icon>
+            添加地址
         </button>
     </view>
 </van-popup>

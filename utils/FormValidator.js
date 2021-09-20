@@ -1,4 +1,4 @@
-import Prompt from "../utils/Prompt";
+import Prompt from "./prompt";
 
 function isRealType(type) {
   return function (obj) {

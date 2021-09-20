@@ -1,5 +1,5 @@
-import SyncThemeFromGlobal from "../../../utils/SyncThemeFromGlobal.js";
-import Prompt from "../../../utils/Prompt";
+import SyncThemeFromGlobal from "../../../utils/syncThemeFromGlobal.js";
+import Prompt from "../../../utils/prompt";
 import { deleteAddress, modifyAddress } from "../../../services/api.js";
 
 Component({

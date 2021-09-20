@@ -1,4 +1,4 @@
-import Prompt from "../utils/Prompt";
+import Prompt from "../utils/prompt";
 import Dialog from "../miniprogram_npm/@vant/weapp/dialog/dialog";
 import services from "./api";
 const app = getApp();

@@ -1,10 +1,12 @@
 {
   "usingComponents": {
-    "oEmpty": "../../components/base/oEmpty/oEmpty",
+    "Empty": "../../components/base/Empty/Empty",
+    "List": "../../components/base/List/List",
     "AddressCell": "../../components/business/AddressCell/AddressCell"
   },
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTitleText": "我的地址",
   "navigationBarTextStyle": "black",
+  "backgroundTextStyle": "dark",
   "enablePullDownRefresh": true
 }
