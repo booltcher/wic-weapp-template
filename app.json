@@ -1,8 +1,10 @@
 {
 	"pages": [
+		"pages/couponSelectorExample/couponSelectorExample",
+		"pages/addressList/addressList",
 		"pages/index/index",
 		"pages/emptyExample/emptyExample",
-		"pages/addressList/addressList",
+		
 		"pages/addressSelectorExample/addressSelectorExample",
 		"pages/addressInfo/addressInfo",
 		"pages/authorize/authorize",

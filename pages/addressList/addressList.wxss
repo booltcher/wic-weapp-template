@@ -1,3 +1,4 @@
+@import "addressList.skeleton.wxss";
 page{
   background-color: #fff;
 }

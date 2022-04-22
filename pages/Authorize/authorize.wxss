@@ -35,7 +35,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #67c23a;
+  background-color: var(--color-wx);
   color: #fff;
   width: 660rpx;
   height: 80rpx;

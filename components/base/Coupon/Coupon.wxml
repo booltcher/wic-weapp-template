@@ -1,3 +1,0 @@
-<view class="empty-com-wrap" hidden="{{!visible}}">
-    <van-empty image="{{imageParse}}" description="{{des}}" />
-</view>

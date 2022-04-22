@@ -1,5 +1,5 @@
 import { getExample } from "../../services/api.js";
-import Prompt from "../../utils/prompt";
+import { Prompt } from "../../lib/enhance";
 const App = getApp();
 Page({
   data: {

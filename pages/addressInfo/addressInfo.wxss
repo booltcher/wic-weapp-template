@@ -35,12 +35,12 @@
     align-items: center;
     justify-content: center;
     background-color: var(--color-main);
-    width: 330rpx;
+    width: 700rpx;
     color: #404040;
     margin: 0 auto;
-    margin-top: 140rpx;
-    height: 70rpx;
-    border-radius: 70rpx;
+    margin-top: 40rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
     font-size: 28rpx;
     color: #fff;
 }

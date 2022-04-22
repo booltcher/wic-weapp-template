@@ -1,0 +1,29 @@
+<view class="coupon-com" style="color:{{textColor}}">
+    <image class="coupon-com__bg" src="{{bgUrl}}"></image>
+
+    <view class="coupon-com__left coupon-com__content">
+        <view class="coupon-com__amount">
+            <text class="singal">￥</text>
+            {{ amount }}
+        </view>
+        <view class="coupo-com__conditions">满{{ conditions }}元可用</view>
+    </view>
+
+    <view class="coupon-com__right coupon-com__content">
+        <view class="coupon-com__right__main">
+            <view class="coupon-com__name">{{ name }}</view>
+            <view class="coupon-com__type" wx:if="{{ couponType === 1 }}">抵用券</view>
+            <view class="coupon-com__time" wx:if="{{ expiryType === 0 && freeFlag === 1 }}">
+                领取{{ expiryDays }}日内有效
+            </view>
+            <view class="coupon-com__time" wx:if="{{ expiryType === 0 && freeFlag === 2 }}">
+                兑换{{ expiryDays }}日内有效
+            </view>
+            <view class="coupon-com__time" wx:if="{{ expiryType === 1 }}">
+                有效期{{ expiryBegin }} - {{ expiryEnd }}
+            </view>
+        </view>
+
+        <view></view>
+    </view>
+</view>

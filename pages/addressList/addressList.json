@@ -2,7 +2,7 @@
   "usingComponents": {
     "Empty": "../../components/base/Empty/Empty",
     "List": "../../components/base/List/List",
-    "AddressCell": "../../components/business/AddressCell/AddressCell"
+    "Address": "../../components/business/Address/Address"
   },
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTitleText": "我的地址",

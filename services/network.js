@@ -1,4 +1,4 @@
-import Prompt from "../utils/prompt";
+import Prompt from "../lib/prompt";
 import Login from "./login";
 
 const App = getApp();

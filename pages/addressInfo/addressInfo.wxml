@@ -33,7 +33,7 @@
         </van-cell>
     </van-cell-group>
 
-    <view class="btn submit-btn" bindtap="submit">保存</view>
+    <view class="submit-btn" bindtap="submit">保存</view>
 </form>
 
 <van-toast id="van-toast" />

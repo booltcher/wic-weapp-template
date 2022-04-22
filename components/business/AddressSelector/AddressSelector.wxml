@@ -5,7 +5,7 @@
     <view class="popup-title">选择地址</view>
     <scroll-view class="opt-wrap" scroll-y>
         <block wx:for="{{ list }}" wx:for-item="item">
-            <AddressCell
+            <Address
                 cid="{{item.id}}"
                 mode="list"
                 active="{{item.id === activeAddress.id}}"
@@ -18,7 +18,7 @@
                 longitude="{{item.longitude}}"
                 hide-actions="{{true}}"
                 bind:change="handleAddressChange"
-            ></AddressCell>
+            ></Address>
         </block>
         <view wx:if="{{ !list.length }}" class="empty-list-tip">暂无地址</view>
     </scroll-view>

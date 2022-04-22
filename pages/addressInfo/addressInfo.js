@@ -1,8 +1,5 @@
 import { createAddress, modifyAddress, bindMobile } from "../../services/api.js";
-import SyncThemeFromGlobal from "../../utils/syncThemeFromGlobal.js";
-import Prompt from "../../utils/prompt";
-import FormValidator from "../../utils/formValidator";
-import manualLocate from "../../utils/manualLocate";
+import {SyncThemeFromGlobal, Prompt, FormValidator, ManualLocate} from "../../lib/enhance";
 const app = getApp();
 
 Page({
@@ -38,10 +35,11 @@ Page({
   async onLoad(options) {
     SyncThemeFromGlobal(this)
     this.setData({
-      bindMobileFlag: app.globalData.userInfo.bindMobileFlag,
+      bindMobileFlag: app.globalData.userInfo ? app.globalData.userInfo.bindMobileFlag : false,
     });
     if (!options.item) return;
     let info = JSON.parse(decodeURIComponent(options.item));
+    console.log(info);
     info.defaultFlag = info.defaultFlag === 1;
     this.setData({
       info,
@@ -51,12 +49,8 @@ Page({
   onShow() {},
 
   async submit() {
-    const formData = {
-      ...this.data.info,
-      defaultFlag: formData.defaultFlag ? 1 : 0,
-    };
-
-    FormValidator(this.data.info, this.data.formRules)
+    const formData = this.data.info
+    FormValidator(formData, this.data.formRules)
       .then(async () => {
         Prompt.loading();
         try {
@@ -91,7 +85,7 @@ Page({
   },
 
   async manualLocate() {
-    const res = await manualLocate();
+    const res = await ManualLocate();
     if (res) {
       this.setData({
         "info.addressName": res.addressName,

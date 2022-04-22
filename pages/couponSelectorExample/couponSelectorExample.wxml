@@ -1,0 +1,11 @@
+<!-- usage example, can be deleted -->
+<view class="container">
+    <button class="exp-btn" bindtap="showSelector">Show Coupon Selector</button>
+</view>
+<CouponSelector 
+    visible="{{ selectorVisible }}"
+    bind:update="handleSelectorUpdate" 
+    bind:close="hideSelector" 
+    bind:change="handleSelectorChange" 
+    showActive="{{ true }}"
+></CouponSelector>

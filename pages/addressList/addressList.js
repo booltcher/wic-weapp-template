@@ -1,8 +1,9 @@
 import { getAddressList, createAddress } from "../../services/api.js";
-import Prompt from "../../utils/prompt";
+import { Prompt } from "../../lib/enhance";
 
 Page({
   data: {
+    initing: true,
     addressList: [
       {
         addressName: "禧悦轩茶馆",
@@ -23,13 +24,38 @@ Page({
         longitude: "108.94162",
         mobile: "15675444444",
         name: "王大锤",
-      }
+      },
+      {
+        addressName: "禧悦轩茶馆",
+        defaultFlag: 0,
+        details: "2714",
+        id: "1",
+        latitude: "34.3404",
+        longitude: "108.94162",
+        mobile: "15675444444",
+        name: "王大锤",
+      },
+      {
+        addressName: "禧悦轩茶馆",
+        defaultFlag: 0,
+        details: "2714",
+        id: "2",
+        latitude: "34.3404",
+        longitude: "108.94162",
+        mobile: "15675444444",
+        name: "王大锤",
+      },
     ],
   },
   async onLoad() {},
 
   onShow() {
     // this.getAddressList(true);
+    setTimeout(() => {
+      this.setData({
+        initing: false,
+      });
+    }, 2000);
   },
 
   async getAddressList(useLoading) {
@@ -38,6 +64,7 @@ Page({
       if (res.code === "200") {
         this.setData({
           addressList: res.data,
+          initing: false,
         });
       }
     } catch (err) {

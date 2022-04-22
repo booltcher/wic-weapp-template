@@ -1,0 +1,23 @@
+<!-- 地址弹窗 -->
+<van-popup show="{{ visible }}" round position="bottom"
+    custom-style="height: 400px;padding: 15px 15px;box-sizing:border-box" bind:close="onSelectorClose" close-on-click-overlay
+    closeable close-icon="close">
+    <view class="popup-title">选择地址</view>
+    <scroll-view class="opt-wrap" scroll-y>
+        <block wx:for="{{ list }}" wx:for-item="item">
+            <Coupon
+                cid="{{item.id}}"
+                name="{{item.name}}"
+                color="{{item.color}}"
+                amount="{{item.amount}}"
+                type="{{item.type}}"
+                expireBegin="{{item.expireBegin}}"
+                expireDays="{{item.expireDays}}"
+                expireEnd="{{item.expireEnd}}"
+                expireType="{{item.expireType}}"
+                disabled="{{item.disabled}}"
+            ></Coupon>
+        </block>
+        <view wx:if="{{ !list.length }}" class="empty-list-tip">暂无地址</view>
+    </scroll-view>
+</van-popup>

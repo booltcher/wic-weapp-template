@@ -1,0 +1,158 @@
+<!--
+此文件为开发者工具生成，生成时间: 2021/9/21 上午12:06:58
+使用方法：
+在 G:\project\wic-applet-template\pages\addressList\addressList.wxml 引入模板
+
+```
+<import src="addressList.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 G:\project\wic-applet-template\pages\addressList\addressList.wxss 中引入样式
+```
+@import "./addressList.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="container" hidden="{{initing}}">
+      <view is="components/base/List/List">
+        <view class="List--list-com">
+          <view class="List--list-com__wrap">
+            <view is="components/business/Address/Address">
+              <view class="address-cell Address--address-cell card Address--card">
+                <view class="cell-active-wrap Address--cell-active-wrap">
+                  <view class="cell-active Address--cell-active"></view>
+                </view>
+                <view class="cell-info Address--cell-info">
+                  <view class="cell-row Address--cell-row cell-row--main Address--cell-row--main">
+                    <view style="margin-right:15px" class="sk-transparent sk-text-14-2857-332 sk-text">王大锤</view>
+                    <view class="sk-transparent sk-text-14-2857-598 sk-text">15675444444</view>
+                  </view>
+                  <view class="cell-row Address--cell-row cell-row--sub Address--cell-row--sub">
+                    <view style="margin-right:15px" class="sk-transparent sk-text-14-2857-33 sk-text">禧悦轩茶馆</view>
+                    <view class="sk-transparent sk-text-14-2857-80 sk-text">2714</view>
+                  </view>
+                </view>
+                <view class="cell-action Address--cell-action">
+                  <view class="cell-action-left Address--cell-action-left">
+                    <view class="cell-default-badge Address--cell-default-badge sk-transparent sk-text-14-2857-328 sk-text">默认</view>
+                  </view>
+                  <view class="cell-action-right Address--cell-action-right">
+                    <view is="components/base/Icon/Icon" color="#EFEFEF" class="sk-image"></view>
+                    <view is="components/base/Icon/Icon" color="#EFEFEF" class="sk-image"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view is="components/business/Address/Address">
+              <view class="address-cell Address--address-cell card Address--card">
+                <view class="cell-active-wrap Address--cell-active-wrap">
+                  <view class="cell-active Address--cell-active"></view>
+                </view>
+                <view class="cell-info Address--cell-info">
+                  <view class="cell-row Address--cell-row cell-row--main Address--cell-row--main">
+                    <view style="margin-right:15px" class="sk-transparent sk-text-14-2857-258 sk-text">王大锤</view>
+                    <view class="sk-transparent sk-text-14-2857-988 sk-text">15675444444</view>
+                  </view>
+                  <view class="cell-row Address--cell-row cell-row--sub Address--cell-row--sub">
+                    <view style="margin-right:15px" class="sk-transparent sk-text-14-2857-151 sk-text">禧悦轩茶馆</view>
+                    <view class="sk-transparent sk-text-14-2857-389 sk-text">2714</view>
+                  </view>
+                </view>
+                <view class="cell-action Address--cell-action">
+                  <view class="cell-action-left Address--cell-action-left">
+                    <view class="cell-default-btn Address--cell-default-btn flx Address--flx">
+                      <view is="components/base/Icon/Icon" color="#EFEFEF" class="sk-image"></view>
+                      <view class="sk-transparent sk-text-14-2857-991 sk-text">设为默认</view>
+                    </view>
+                  </view>
+                  <view class="cell-action-right Address--cell-action-right">
+                    <view is="components/base/Icon/Icon" color="#EFEFEF" class="sk-image"></view>
+                    <view is="components/base/Icon/Icon" color="#EFEFEF" class="sk-image"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view is="components/business/Address/Address">
+              <view class="address-cell Address--address-cell card Address--card">
+                <view class="cell-active-wrap Address--cell-active-wrap">
+                  <view class="cell-active Address--cell-active"></view>
+                </view>
+                <view class="cell-info Address--cell-info">
+                  <view class="cell-row Address--cell-row cell-row--main Address--cell-row--main">
+                    <view style="margin-right:15px" class="sk-transparent sk-text-14-2857-836 sk-text">王大锤</view>
+                    <view class="sk-transparent sk-text-14-2857-437 sk-text">15675444444</view>
+                  </view>
+                  <view class="cell-row Address--cell-row cell-row--sub Address--cell-row--sub">
+                    <view style="margin-right:15px" class="sk-transparent sk-text-14-2857-894 sk-text">禧悦轩茶馆</view>
+                    <view class="sk-transparent sk-text-14-2857-952 sk-text">2714</view>
+                  </view>
+                </view>
+                <view class="cell-action Address--cell-action">
+                  <view class="cell-action-left Address--cell-action-left">
+                    <view class="cell-default-badge Address--cell-default-badge sk-transparent sk-text-14-2857-765 sk-text">默认</view>
+                  </view>
+                  <view class="cell-action-right Address--cell-action-right">
+                    <view is="components/base/Icon/Icon" color="#EFEFEF" class="sk-image"></view>
+                    <view is="components/base/Icon/Icon" color="#EFEFEF" class="sk-image"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view is="components/business/Address/Address">
+              <view class="address-cell Address--address-cell card Address--card">
+                <view class="cell-active-wrap Address--cell-active-wrap">
+                  <view class="cell-active Address--cell-active"></view>
+                </view>
+                <view class="cell-info Address--cell-info">
+                  <view class="cell-row Address--cell-row cell-row--main Address--cell-row--main">
+                    <view style="margin-right:15px" class="sk-transparent sk-text-14-2857-432 sk-text">王大锤</view>
+                    <view class="sk-transparent sk-text-14-2857-905 sk-text">15675444444</view>
+                  </view>
+                  <view class="cell-row Address--cell-row cell-row--sub Address--cell-row--sub">
+                    <view style="margin-right:15px" class="sk-transparent sk-text-14-2857-650 sk-text">禧悦轩茶馆</view>
+                    <view class="sk-transparent sk-text-14-2857-16 sk-text">2714</view>
+                  </view>
+                </view>
+                <view class="cell-action Address--cell-action">
+                  <view class="cell-action-left Address--cell-action-left">
+                    <view class="cell-default-btn Address--cell-default-btn flx Address--flx">
+                      <view is="components/base/Icon/Icon" color="#EFEFEF" class="sk-image"></view>
+                      <view class="sk-transparent sk-text-14-2857-205 sk-text">设为默认</view>
+                    </view>
+                  </view>
+                  <view class="cell-action-right Address--cell-action-right">
+                    <view is="components/base/Icon/Icon" color="#EFEFEF" class="sk-image"></view>
+                    <view is="components/base/Icon/Icon" color="#EFEFEF" class="sk-image"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="List--list-com__tip">
+            <view is="miniprogram_npm/@vant/weapp/divider/index">
+              <view class="van-divider index--van-divider van-divider--center index--van-divider--center sk-transparent sk-text-20-8333-627 sk-text sk-pseudo sk-pseudo-circle" style="margin-bottom: 0px; border: none;">已经到底啦</view>
+            </view>
+          </view>
+          <view is="components/base/Empty/Empty"></view>
+        </view>
+      </view>
+      <view class="fixed-btn-wrap">
+        <button class="fixed-btn--wx fixed-btn sk-transparent sk-button sk-pseudo sk-pseudo-circle">
+          <view is="components/base/Icon/Icon" color="#EFEFEF" class="sk-image"></view>
+          微信地址
+        </button>
+        <button class="fixed-btn--custom fixed-btn sk-transparent sk-button sk-pseudo sk-pseudo-circle">
+          <view is="components/base/Icon/Icon" color="#EFEFEF" class="sk-image"></view>
+          添加地址
+        </button>
+      </view>
+    </view>
+    <view is="miniprogram_npm/@vant/weapp/toast/index" id="van-toast">
+      <view is="miniprogram_npm/@vant/weapp/transition/index"></view>
+    </view>
+  </view>
+</template>

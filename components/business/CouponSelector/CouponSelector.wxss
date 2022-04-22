@@ -1,0 +1,6 @@
+.opt-wrap {
+  height: 320px;
+  margin-top: 10px;
+  padding-bottom: 0 10rpx 10px;
+  width: 100%;
+}

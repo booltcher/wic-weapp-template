@@ -14,36 +14,56 @@ Component({
 
   data: {
     THEME_COLOR: null,
-    activeAddress: null,
+    activeCoupon: null,
     list: [
       {
-        addressName: "禧悦轩茶馆",
-        defaultFlag: 1,
-        details: "2714",
-        id: "1",
-        latitude: "34.3404",
-        longitude: "108.94162",
-        mobile: "15675444444",
-        name: "王大锤",
-      },{
-        addressName: "黄龙岛桂花超市南门",
-        defaultFlag: 0,
-        details: "2714",
-        id: "2",
-        latitude: "34.3404",
-        longitude: "108.94162",
-        mobile: "15675444444",
-        name: "王二",
-      },{
-        addressName: "黄龙岛桂花超市南门",
-        defaultFlag: 0,
-        details: "2714",
-        id: "3",
-        latitude: "34.3404",
-        longitude: "108.94162",
-        mobile: "15675444444",
-        name: "王二",
+        cid: '1',
+        color: 'green',
+        name: '开学季满减优惠券',
+        conditions: 100,
+        amount: '10',
+        type: 1,
+        expireBegin: 1632209865211,
+        expireDays: 2,
+        expireEnd: 1632409865211,
+        disabled: false
       },
+      {
+        cid: '2',
+        color: 'red',
+        name: '开学季满减优惠券',
+        conditions: 100,
+        amount: '10',
+        type: 1,
+        expireBegin: 1632209865211,
+        expireDays: 2,
+        expireEnd: 1632409865211,
+        disabled: false
+      },
+      {
+        cid: '4',
+        color: 'red',
+        name: '开学季满减优惠券',
+        conditions: 100,
+        amount: '10',
+        type: 1,
+        expireBegin: 1632209865211,
+        expireDays: 2,
+        expireEnd: 1632409865211,
+        disabled: true
+      },
+      {
+        cid: '3',
+        color: 'blue',
+        name: '开学季满减优惠券',
+        conditions: 100,
+        amount: '10',
+        type: 1,
+        expireBegin: 1632209865211,
+        expireDays: 2,
+        expireEnd: 1632409865211,
+        disabled: false
+      }
     ],
   },
 

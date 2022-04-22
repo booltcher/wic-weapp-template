@@ -1,17 +1,18 @@
-import SyncThemeFromGlobal from "../../../utils/syncThemeFromGlobal.js";
-import Prompt from "../../../utils/prompt";
+import { behavior as computedBehavior } from "miniprogram-computed";
+import { Prompt, SyncThemeFromGlobal } from "../../../lib/enhance";
 import { deleteAddress, modifyAddress } from "../../../services/api.js";
 
 Component({
+  behaviors: [computedBehavior],
   properties: {
     mode: {
       type: String,
-      value: "card", //  card, list
+      value: "card", // card, list
     },
     cid: String,
     name: String,
     mobile: Number,
-    defaultFlag: Boolean,
+    defaultFlag: Number,
     addressName: String,
     details: String,
     latitude: Number,
@@ -20,10 +21,10 @@ Component({
       type: Boolean,
       value: false,
     },
-    hideActions:{
+    hideActions: {
       type: Boolean,
-      value: false
-    }
+      value: false,
+    },
   },
 
   data: {
@@ -36,26 +37,26 @@ Component({
     created() {
       SyncThemeFromGlobal(this);
     },
+  },
 
-    attached() {
-      this.setData({
-        info: {
-          id: this.data.cid,
-          name: this.data.name,
-          mobile: this.data.mobile,
-          defaultFlag: this.data.defaultFlag,
-          addressName: this.data.addressName,
-          details: this.data.details,
-          latitude: this.data.latitude,
-          longitude: this.data.longitude,
-        },
-      });
+  computed: {
+    info(data) {
+      return {
+        id: data.cid,
+        name: data.name,
+        mobile: data.mobile,
+        defaultFlag: data.defaultFlag,
+        addressName: data.addressName,
+        details: data.details,
+        latitude: data.latitude,
+        longitude: data.longitude,
+      };
     },
   },
 
   methods: {
     emitChangeEvent() {
-      this.triggerEvent('change', this.data.info)
+      this.triggerEvent("change", this.data.info);
     },
 
     async setDefault() {

@@ -3,6 +3,6 @@
   "styleIsolation": "apply-shared",
   "usingComponents": {
     "van-popup": "@vant/weapp/popup/index",
-    "Address": "../Address/Address"
+    "Coupon": "../Coupon/Coupon"
   }
 }
